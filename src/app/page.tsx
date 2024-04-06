@@ -16,7 +16,9 @@ export default async function Home() {
   return (
     <>
       {publications.data.map((publication) => (
-        <h1>{publication.attributes.title}</h1>
+        <h1 key={publication.attributes.slug}>
+          {publication.attributes.title}
+        </h1>
       ))}
     </>
   );
