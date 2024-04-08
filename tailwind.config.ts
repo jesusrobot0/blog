@@ -7,11 +7,13 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    colors: {
-      background: "#503d34",
-      headingText: "#fff",
-      subHeading: "#121212",
-      bodyFont: "#121212",
+    extend: {
+      colors: {
+        background: "#503d34",
+        headingText: "#fff",
+        subHeading: "#121212",
+        bodyFont: "#121212",
+      },
     },
   },
   plugins: [],
