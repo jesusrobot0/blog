@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { primaryFont } from "@/config/fonts";
+import { Navigation } from "@/components/ui";
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Jesús Velasco",
@@ -16,7 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={inter.className}>{children}</body>
+      <body className={primaryFont.className}>
+        <Navigation />
+        {children}
+      </body>
     </html>
   );
 }
