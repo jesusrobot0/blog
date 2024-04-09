@@ -8,7 +8,7 @@ const userLinks = [
   { text: "About", path: "/about" },
   { text: "Services", path: "/services" },
   { text: "Projects", path: "/projects" },
-  { text: "Blogs", path: "/blogs" },
+  { text: "Blog", path: "/blog" },
   { text: "Contact", path: "/contact" },
 ];
 
