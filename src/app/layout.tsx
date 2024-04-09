@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { primaryFont } from "@/config/fonts";
-import { Navigation } from "@/components/ui";
+import { Navbar } from "@/components/ui";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,8 +15,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={primaryFont.className}>
-        <Navigation />
+      <body className={`${primaryFont.className} text-[#121212]`}>
+        <Navbar />
         {children}
       </body>
     </html>

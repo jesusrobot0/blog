@@ -1,1 +1,2 @@
-export { Navigation } from "./navigation/Navigation";
+export { Wrapper } from "./wrapper/Wrapper";
+export { Navbar } from "./navbar/Navbar";
