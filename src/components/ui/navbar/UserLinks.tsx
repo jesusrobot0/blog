@@ -35,9 +35,27 @@ export function UserLinks({ menuVisibility, setMenuVisibility }: Props) {
 
       <button
         onClick={() => setMenuVisibility(!menuVisibility)}
-        className="sm:hidden"
+        className="group flex justify-center items-center sm:hidden"
       >
-        ToggleMenu
+        <div className="bg-red-700 absolute h-full w-20"></div>
+        <div className="space-y-2 relative">
+          <span
+            className={clsx(
+              "block h-[2px] w-5 origin-center bg-[#a99c95] transition-transform ease-in-out",
+              {
+                "translate-y-1 rotate-45": menuVisibility,
+              }
+            )}
+          ></span>
+          <span
+            className={clsx(
+              "absolute right-0 h-[2px] w-3 origin-center bg-[#a99c95] transition-transform ease-in-out",
+              {
+                "w-[20.5px] -translate-y-1.5 -rotate-45": menuVisibility,
+              }
+            )}
+          ></span>
+        </div>
       </button>
     </>
   );
