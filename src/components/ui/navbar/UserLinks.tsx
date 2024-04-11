@@ -43,6 +43,9 @@ export function UserLinks({
       <button
         onClick={() => setIsMenuOpen(!isMenuOpen)}
         className="group flex justify-center items-center sm:hidden"
+        aria-expanded={isMenuOpen}
+        aria-controls="user-links"
+        aria-label={isMenuOpen ? "Cerrar menú" : "Abrir menú"}
       >
         <div className="absolute h-full w-20"></div>
         <div className="space-y-2 relative">
