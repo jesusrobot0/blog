@@ -10,23 +10,29 @@ const userLinks = [
 ];
 
 interface Props {
-  menuVisibility: boolean;
-  setMenuVisibility: (value: boolean) => void;
+  isMenuOpen: boolean;
+  isNavbarScrolled: boolean;
+  setIsMenuOpen: (value: boolean) => void;
 }
 
-export function UserLinks({ menuVisibility, setMenuVisibility }: Props) {
+export function UserLinks({
+  isMenuOpen,
+  isNavbarScrolled,
+  setIsMenuOpen,
+}: Props) {
   return (
     <>
       <ul
         className={clsx(
-          "bg-blue-200 absolute top-[74px] left-0 w-screen h-screen pt-[75px] flex flex-col items-center gap-10 sm:static sm:w-auto sm:h-auto sm:pt-0 sm:flex sm:flex-row",
-          { hidden: !menuVisibility }
+          "absolute top-[74px] left-0 w-screen h-screen pt-[75px] flex flex-col items-center gap-10 sm:static sm:w-auto sm:h-auto sm:pt-0 sm:flex sm:flex-row",
+          { hidden: !isMenuOpen },
+          { "text-[#121212]": isNavbarScrolled }
         )}
       >
         {userLinks.map(({ text, path }) => (
           <li
             key={`navigation-user-link-${path}`}
-            className="bg-green-200 w-[89%] h-[101px] text-[18px] sm:h-fit"
+            className="w-[89%] h-[101px] text-[18px] sm:h-fit"
           >
             <Link href={path}>{text}</Link>
           </li>
@@ -34,25 +40,27 @@ export function UserLinks({ menuVisibility, setMenuVisibility }: Props) {
       </ul>
 
       <button
-        onClick={() => setMenuVisibility(!menuVisibility)}
+        onClick={() => setIsMenuOpen(!isMenuOpen)}
         className="group flex justify-center items-center sm:hidden"
       >
-        <div className="bg-red-700 absolute h-full w-20"></div>
+        <div className="absolute h-full w-20"></div>
         <div className="space-y-2 relative">
           <span
             className={clsx(
               "block h-[2px] w-5 origin-center bg-[#a99c95] transition-transform ease-in-out",
               {
-                "translate-y-1 rotate-45": menuVisibility,
-              }
+                "translate-y-1 rotate-45": isMenuOpen,
+              },
+              { "bg-[#121212]": isNavbarScrolled }
             )}
           ></span>
           <span
             className={clsx(
               "absolute right-0 h-[2px] w-3 origin-center bg-[#a99c95] transition-transform ease-in-out",
               {
-                "w-[20.5px] -translate-y-1.5 -rotate-45": menuVisibility,
-              }
+                "w-[20.5px] -translate-y-1.5 -rotate-45": isMenuOpen,
+              },
+              { "bg-[#121212]": isNavbarScrolled }
             )}
           ></span>
         </div>

@@ -1,11 +1,21 @@
 import Link from "next/link";
 import { LogoFont } from "@/config/fonts";
+import clsx from "clsx";
 
-export function Logo() {
+interface Props {
+  isNavbarScrolled: boolean;
+}
+
+export function Logo({ isNavbarScrolled }: Props) {
   return (
     <Link
       href="/"
-      className={`${LogoFont.className} text-[22px] font-bold tracking-tight`}
+      className={clsx(
+        `${LogoFont.className} text-[22px] font-bold tracking-tight hover:text-[#a89e9a]`,
+        {
+          "text-[#121212] hover:text-[#121212]": isNavbarScrolled,
+        }
+      )}
     >
       Keeper
     </Link>
