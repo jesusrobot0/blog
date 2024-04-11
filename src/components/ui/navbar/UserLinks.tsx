@@ -26,8 +26,8 @@ export function UserLinks({
         className={clsx(
           "absolute top-[74px] left-0 w-screen h-screen pt-[75px] flex flex-col items-center gap-10 sm:static sm:w-auto sm:h-auto sm:pt-0 sm:flex sm:flex-row",
           { hidden: !isMenuOpen },
-          { "bg-white text-[#121212]": isMenuOpen },
-          { "text-[#121212]": isNavbarScrolled }
+          { "text-[#121212]": isNavbarScrolled },
+          { "bg-white text-[#121212]": isMenuOpen }
         )}
       >
         {userLinks.map(({ text, path }) => (
