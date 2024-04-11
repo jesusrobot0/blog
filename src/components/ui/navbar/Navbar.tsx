@@ -28,11 +28,12 @@ export function Navbar() {
         "fixed w-screen bg-background transition-colors duration-200 ease-linear",
         {
           "bg-white": isNavbarScrolled,
-        }
+        },
+        { "bg-white": isMenuOpen }
       )}
     >
       <nav className="w-[90%] max-w-[1440px] h-[74px] mx-auto flex justify-between items-center text-white border-b border-b-[#8f7b71]">
-        <Logo isNavbarScrolled={isNavbarScrolled} />
+        <Logo isNavbarScrolled={isNavbarScrolled} isMenuOpen={isMenuOpen} />
         <UserLinks
           isMenuOpen={isMenuOpen}
           isNavbarScrolled={isNavbarScrolled}
