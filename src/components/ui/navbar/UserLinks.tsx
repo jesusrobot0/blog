@@ -35,8 +35,9 @@ export function UserLinks({
             <Link
               href={path}
               className="h-[101px] text-[32px] flex justify-between items-center border-b border-b-[#121212] group sm:h-fit sm:text-[18px] sm:border-none"
+              onClick={() => setIsMenuOpen(false)}
             >
-              <span className="group-hover:text-[#aa9d95] group-hover:pl-7 transition-all duration-300 sm:transition-none sm:group-hover:pl-0 sm:group-hover:text-white">
+              <span className="group-hover:text-[#aa9d95] group-hover:pl-7 transition-all duration-300 sm:transition-none sm:group-hover:pl-0 sm:group-hover:text-current">
                 {text}
               </span>
               <span className="-rotate-45 mr-4 group-hover:bg-[#aa9d95] group-hover:p-2 group-hover:rounded-full group-hover:rotate-0 group-hover:text-white transition-all duration-300 sm:hidden">

@@ -42,11 +42,15 @@ export function Navbar() {
         {
           "bg-white": isNavbarScrolled,
         },
-        { "bg-white": isMenuOpen }
+        { "bg-white duration-0": isMenuOpen }
       )}
     >
       <nav className="w-[90%] max-w-[1440px] h-[74px] mx-auto flex justify-between items-center text-white border-b border-b-[#8f7b71]">
-        <Logo isNavbarScrolled={isNavbarScrolled} isMenuOpen={isMenuOpen} />
+        <Logo
+          isNavbarScrolled={isNavbarScrolled}
+          isMenuOpen={isMenuOpen}
+          setIsMenuOpen={setIsMenuOpen}
+        />
         <UserLinks
           isMenuOpen={isMenuOpen}
           isNavbarScrolled={isNavbarScrolled}
