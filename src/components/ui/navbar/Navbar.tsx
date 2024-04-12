@@ -38,11 +38,11 @@ export function Navbar() {
   return (
     <div
       className={clsx(
-        "fixed w-screen bg-background transition-colors duration-200 ease-linear sm:transition-none",
+        "fixed w-screen bg-background transition-colors duration-200 ease-linear",
         {
           "bg-white": isNavbarScrolled,
         },
-        { "bg-white duration-0": isMenuOpen }
+        { "bg-white transition-none": isMenuOpen }
       )}
     >
       <nav className="w-[90%] max-w-[1440px] h-[74px] mx-auto flex justify-between items-center text-white border-b border-b-[#8f7b71]">
