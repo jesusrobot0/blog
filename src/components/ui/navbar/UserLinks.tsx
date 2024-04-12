@@ -24,18 +24,38 @@ export function UserLinks({
     <>
       <ul
         className={clsx(
-          "absolute top-[74px] left-0 w-screen h-screen pt-[75px] flex flex-col items-center gap-10 sm:static sm:w-auto sm:h-auto sm:pt-0 sm:flex sm:flex-row",
+          "absolute top-[74px] left-0 w-screen h-screen pt-[75px] flex flex-col items-center sm:gap-10 sm:static sm:w-auto sm:h-auto sm:pt-0 sm:flex sm:flex-row",
           { hidden: !isMenuOpen },
           { "text-[#121212]": isNavbarScrolled },
           { "bg-white text-[#121212]": isMenuOpen }
         )}
       >
         {userLinks.map(({ text, path }) => (
-          <li
-            key={`navigation-user-link-${path}`}
-            className="w-[89%] h-[101px] text-[18px] sm:h-fit"
-          >
-            <Link href={path}>{text}</Link>
+          <li key={`navigation-user-link-${path}`} className="w-[89%]">
+            <Link
+              href={path}
+              className="h-[101px] text-[32px] flex justify-between items-center border-b border-b-[#121212] group sm:h-fit sm:text-[18px] sm:border-none"
+            >
+              <span className="group-hover:text-[#aa9d95] group-hover:pl-7 transition-all duration-300 sm:transition-none sm:group-hover:pl-0 sm:group-hover:text-white">
+                {text}
+              </span>
+              <span className="-rotate-45 mr-4 group-hover:bg-[#aa9d95] group-hover:p-2 group-hover:rounded-full group-hover:rotate-0 group-hover:text-white transition-all duration-300 sm:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="M18 8L22 12L18 16" />
+                  <path d="M2 12H22" />
+                </svg>
+              </span>
+            </Link>
           </li>
         ))}
       </ul>
