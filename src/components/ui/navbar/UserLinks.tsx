@@ -26,21 +26,21 @@ export function UserLinks({
         className={clsx(
           "absolute top-[74px] left-0 w-screen h-screen pt-[75px] flex flex-col items-center sm:gap-10 sm:static sm:w-auto sm:h-auto sm:pt-0 sm:flex sm:flex-row",
           { hidden: !isMenuOpen },
-          { "text-[#121212]": isNavbarScrolled },
-          { "bg-white text-[#121212]": isMenuOpen }
+          { "text-textColor": isNavbarScrolled },
+          { "bg-white text-textColor": isMenuOpen }
         )}
       >
         {userLinks.map(({ text, path }) => (
           <li key={`navigation-user-link-${path}`} className="w-[89%]">
             <Link
               href={path}
-              className="h-[101px] text-[32px] flex justify-between items-center border-b border-b-[#121212] group sm:h-fit sm:text-[18px] sm:border-none"
+              className="h-[101px] text-[32px] flex justify-between items-center border-b border-b-textColor group sm:h-fit sm:text-[18px] sm:border-none"
               onClick={() => setIsMenuOpen(false)}
             >
               <span className="group-hover:text-[#aa9d95] group-hover:pl-7 transition-all duration-300 sm:transition-none sm:group-hover:pl-0 sm:group-hover:text-current">
                 {text}
               </span>
-              <span className="-rotate-45 mr-4 group-hover:bg-[#aa9d95] group-hover:p-2 group-hover:rounded-full group-hover:rotate-0 group-hover:text-white transition-all duration-300 sm:hidden">
+              <span className="-rotate-45 mr-4 group-hover:bg-[#aa9d95] group-hover:p-2 group-hover:rounded-full group-hover:rotate-0 group-hover:text-textAccent transition-all duration-300 sm:hidden">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -76,8 +76,8 @@ export function UserLinks({
               {
                 "translate-y-1 rotate-45": isMenuOpen,
               },
-              { "bg-[#121212]": isNavbarScrolled },
-              { "bg-[#121212]": isMenuOpen }
+              { "bg-textColor": isNavbarScrolled },
+              { "bg-textColor": isMenuOpen }
             )}
           ></span>
           <span
@@ -86,8 +86,8 @@ export function UserLinks({
               {
                 "w-[20.5px] -translate-y-1.5 -rotate-45": isMenuOpen,
               },
-              { "bg-[#121212]": isNavbarScrolled },
-              { "bg-[#121212]": isMenuOpen }
+              { "bg-textColor": isNavbarScrolled },
+              { "bg-textColor": isMenuOpen }
             )}
           ></span>
         </div>

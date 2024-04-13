@@ -15,9 +15,8 @@ export function Logo({ isNavbarScrolled, isMenuOpen, setIsMenuOpen }: Props) {
       className={clsx(
         `${LogoFont.className} text-[22px] font-bold tracking-tight hover:text-[#a89e9a]`,
         {
-          "text-[#121212] hover:text-black": isNavbarScrolled,
-        },
-        { "text-[#121212]": isMenuOpen }
+          "text-textColor hover:text-textColor": isNavbarScrolled || isMenuOpen,
+        }
       )}
       onClick={() => setIsMenuOpen(false)}
     >

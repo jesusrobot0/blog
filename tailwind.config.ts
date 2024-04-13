@@ -10,6 +10,8 @@ const config: Config = {
     extend: {
       colors: {
         background: "#503d33",
+        textColor: "#121212",
+        textAccent: "#fff",
         headingText: "#fff",
         subHeading: "#121212",
         bodyFont: "#121212",

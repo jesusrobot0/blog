@@ -39,13 +39,11 @@ export function Navbar() {
     <div
       className={clsx(
         "fixed w-screen bg-background transition-colors duration-200 ease-linear",
-        {
-          "bg-white": isNavbarScrolled,
-        },
-        { "bg-white transition-none": isMenuOpen }
+        { "bg-white": isNavbarScrolled },
+        { "bg-white": isMenuOpen }
       )}
     >
-      <nav className="w-[90%] max-w-[1440px] h-[74px] mx-auto flex justify-between items-center text-white border-b border-b-[#8f7b71]">
+      <nav className="w-[90%] max-w-[1440px] h-[74px] mx-auto flex justify-between items-center text-textAccent border-b border-b-[#8f7b71]">
         <Logo
           isNavbarScrolled={isNavbarScrolled}
           isMenuOpen={isMenuOpen}
