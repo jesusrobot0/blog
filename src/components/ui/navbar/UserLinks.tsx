@@ -9,6 +9,29 @@ const userLinks = [
   { text: "Contact", path: "/contact" },
 ];
 
+const socialLinks = [
+  {
+    text: "Facebook",
+    iconPath: "/icons/facebook-icon.svg",
+    path: "https://www.facebook.com/",
+  },
+  {
+    text: "Twitter",
+    iconPath: "/icons/twitter-icon.svg",
+    path: "https://x.com/",
+  },
+  {
+    text: "Instagram",
+    iconPath: "/icons/instagram-icon.svg",
+    path: "https://www.instagram.com/",
+  },
+  {
+    text: "Linkedin",
+    iconPath: "/icons/linkedin-icon.svg",
+    path: "https://www.linkedin.com/",
+  },
+];
+
 interface Props {
   isMenuOpen: boolean;
   isNavbarScrolled: boolean;
@@ -34,13 +57,13 @@ export function UserLinks({
           <li key={`navigation-user-link-${path}`} className="w-[89%]">
             <Link
               href={path}
-              className="h-[101px] text-[32px] flex justify-between items-center border-b border-b-textColor group sm:h-fit sm:text-[18px] sm:border-none"
+              className="h-[101px] text-[32px] flex justify-between items-center border-b border-b-textColor group hover:border-b-[#aa9d95] sm:h-fit sm:text-[18px] sm:border-none"
               onClick={() => setIsMenuOpen(false)}
             >
               <span className="group-hover:text-[#aa9d95] group-hover:pl-7 transition-all duration-300 sm:transition-none sm:group-hover:pl-0 sm:group-hover:text-current">
                 {text}
               </span>
-              <span className="-rotate-45 mr-4 group-hover:bg-[#aa9d95] group-hover:p-2 group-hover:rounded-full group-hover:rotate-0 group-hover:text-textAccent transition-all duration-300 sm:hidden">
+              <span className="-rotate-45 mr-4 group-hover:bg-[#aa9d95] group-hover:p-2 group-hover:rounded-full group-hover:rotate-0 group-hover:text-textAccent transition-all duration-200 sm:hidden">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -59,6 +82,19 @@ export function UserLinks({
             </Link>
           </li>
         ))}
+        <div className="w-full h-[46px] mt-[100px] flex justify-center items-center gap-[30px] sm:hidden">
+          {socialLinks.map(({ text, path, iconPath }) => (
+            <Link
+              key={`navigation-social-link-${path}`}
+              href={path}
+              target="_blank"
+              rel="noopener noreferrer nofollow"
+              title={`Link to our ${text} profile`}
+            >
+              <img src={iconPath} alt={`${text} Icon`} />
+            </Link>
+          ))}
+        </div>
       </ul>
 
       <button
