@@ -1,3 +1,4 @@
+export const revalidate = 60;
 import { getCategoriesCount } from "@/categories/api";
 import Link from "next/link";
 
