@@ -1,0 +1,1 @@
+export { HeroWithCategories } from "./HeroWithCategories";

@@ -3,5 +3,5 @@ interface Props {
 }
 
 export function Wrapper({ children }: Props) {
-  return <div className="flex flex-col items-center">{children}</div>;
+  return <div className="w-[90%] max-w-[1440px] mx-auto">{children}</div>;
 }

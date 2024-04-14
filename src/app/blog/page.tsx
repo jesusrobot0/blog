@@ -1,10 +1,9 @@
-import { getCategoriesCount } from "@/categories/api";
+import { HeroWithCategories } from "@/blog-pages/components";
 
-export default async function BlogPage() {
-  const categoriesCount = await getCategoriesCount();
+export default function BlogPage() {
   return (
-    <div>
-      <header></header>
-    </div>
+    <>
+      <HeroWithCategories />
+    </>
   );
 }

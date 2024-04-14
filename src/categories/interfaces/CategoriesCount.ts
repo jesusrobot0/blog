@@ -10,6 +10,7 @@ export interface CategoriesCountDatum {
 
 export interface PurpleAttributes {
   name: string;
+  slug: string;
   publications: Publications;
 }
 
