@@ -1,4 +1,4 @@
-import { HeroWithCategoryList } from "@/site-pages/components";
+import { HeroWithCategoryList } from "@/ui/components";
 import { getCategories } from "@/categories/api";
 
 export default async function BlogPage() {
