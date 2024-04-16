@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import clsx from "clsx";
-import { Logo, UserLinks } from "./";
+import { Logo, UserLinks } from "../";
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

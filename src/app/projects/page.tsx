@@ -7,7 +7,7 @@ export default async function ProjectsPage() {
     <>
       <HeroWithCategoryList
         title="We are here to support your brands, goods, services, and worldviews."
-        URLSegment="service"
+        URLSegment="project"
         dataList={data}
       />
     </>

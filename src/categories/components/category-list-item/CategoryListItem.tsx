@@ -16,7 +16,7 @@ export function CategoryListItem({
   return (
     <li>
       <Link
-        href={`/${URLSegment}/${slug}`}
+        href={`/${URLSegment}/category/${slug}`}
         className="text-xl flex items-center gap-3 tracking-wide antialiased group hover:text-white sm:text-2xl transition-colors duration-300"
       >
         <span className="text-[#d1c9c6] group-hover:text-white transition-colors duration-300">
