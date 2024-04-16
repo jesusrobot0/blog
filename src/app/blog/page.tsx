@@ -1,8 +1,8 @@
-import { HeroWithCategoryList } from "@/blog-pages/components";
-import { getCategoriesCount } from "@/categories/api";
+import { HeroWithCategoryList } from "@/site-pages/components";
+import { getCategories } from "@/categories/api";
 
 export default async function BlogPage() {
-  const { data } = await getCategoriesCount();
+  const { data } = await getCategories();
 
   return (
     <>

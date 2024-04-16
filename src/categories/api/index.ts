@@ -1,1 +1,1 @@
-export { getCategoriesCount } from "./getCategoriesCount";
+export { getCategories } from "./getCategories";
