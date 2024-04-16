@@ -9,7 +9,7 @@ export default async function BlogPage() {
       <HeroWithCategoryList
         title="Sharing is caring so we make time to write about our experience."
         URLSegment="blog"
-        categories={data}
+        dataList={data}
       />
     </>
   );

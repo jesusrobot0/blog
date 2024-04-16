@@ -1,14 +1,23 @@
 import { CategoriesCountDatum } from "@/categories/interfaces";
 import { CategoryListItem } from "@/categories/components";
+import { ServicesDatum } from "@/projects/interfaces";
 
 interface Props {
   URLSegment: string;
-  categories: CategoriesCountDatum[];
+  dataList: CategoriesCountDatum[] | ServicesDatum[];
 }
 
-export function CategoriesList({ URLSegment, categories }: Props) {
-  const totalCount = categories.reduce((total, category) => {
-    return total + category.attributes.publications.data.length;
+function isCategoriesCountDatum(data: any): data is CategoriesCountDatum {
+  return (data as CategoriesCountDatum).attributes.publications !== undefined;
+}
+
+export function CategoriesList({ URLSegment, dataList }: Props) {
+  const totalCount = dataList.reduce((total, item) => {
+    if (isCategoriesCountDatum(item)) {
+      return total + item.attributes.publications.data.length;
+    } else {
+      return total + item.attributes.projects.data.length;
+    }
   }, 0);
 
   return (
@@ -21,13 +30,17 @@ export function CategoriesList({ URLSegment, categories }: Props) {
           categoryCount={totalCount}
         />
 
-        {categories.map((category) => (
+        {dataList.map((category) => (
           <CategoryListItem
             key={`hero-categoriesList-item-${category.id}`}
             slug={category.attributes.slug}
             name={category.attributes.name}
             URLSegment={URLSegment}
-            categoryCount={category.attributes.publications.data.length}
+            categoryCount={
+              isCategoriesCountDatum(category)
+                ? category.attributes.publications.data.length
+                : category.attributes.projects.data.length
+            }
           />
         ))}
       </ul>
