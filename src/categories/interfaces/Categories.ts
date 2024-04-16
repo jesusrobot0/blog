@@ -1,9 +1,9 @@
-export interface CategoriesCount {
-  data: CategoriesCountDatum[];
+export interface Categories {
+  data: CategoriesDatum[];
   meta: Meta;
 }
 
-export interface CategoriesCountDatum {
+export interface CategoriesDatum {
   id: number;
   attributes: PurpleAttributes;
 }

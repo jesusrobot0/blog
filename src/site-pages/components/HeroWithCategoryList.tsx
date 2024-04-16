@@ -1,12 +1,12 @@
 import { Wrapper } from "@/ui/components";
 import { CategoriesList } from "@/categories/components";
-import { CategoriesCountDatum } from "@/categories/interfaces";
+import { CategoriesDatum } from "@/categories/interfaces";
 import { ServicesDatum } from "@/projects/interfaces";
 
 interface Props {
   title: string;
   URLSegment: string;
-  dataList: CategoriesCountDatum[] | ServicesDatum[];
+  dataList: CategoriesDatum[] | ServicesDatum[];
 }
 
 export function HeroWithCategoryList({ dataList, URLSegment, title }: Props) {

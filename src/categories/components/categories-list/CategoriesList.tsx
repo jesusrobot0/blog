@@ -1,19 +1,19 @@
-import { CategoriesCountDatum } from "@/categories/interfaces";
 import { CategoryListItem } from "@/categories/components";
+import { CategoriesDatum } from "@/categories/interfaces";
 import { ServicesDatum } from "@/projects/interfaces";
 
 interface Props {
   URLSegment: string;
-  dataList: CategoriesCountDatum[] | ServicesDatum[];
+  dataList: CategoriesDatum[] | ServicesDatum[];
 }
 
-function isCategoriesCountDatum(data: any): data is CategoriesCountDatum {
-  return (data as CategoriesCountDatum).attributes.publications !== undefined;
+function isCategoriesDatum(data: any): data is CategoriesDatum {
+  return (data as CategoriesDatum).attributes.publications !== undefined;
 }
 
 export function CategoriesList({ URLSegment, dataList }: Props) {
   const totalCount = dataList.reduce((total, item) => {
-    if (isCategoriesCountDatum(item)) {
+    if (isCategoriesDatum(item)) {
       return total + item.attributes.publications.data.length;
     } else {
       return total + item.attributes.projects.data.length;
@@ -37,7 +37,7 @@ export function CategoriesList({ URLSegment, dataList }: Props) {
             name={category.attributes.name}
             URLSegment={URLSegment}
             categoryCount={
-              isCategoriesCountDatum(category)
+              isCategoriesDatum(category)
                 ? category.attributes.publications.data.length
                 : category.attributes.projects.data.length
             }

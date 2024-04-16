@@ -1,2 +1,2 @@
-export type { CategoriesCount } from "./CategoriesCount";
-export type { CategoriesCountDatum } from "./CategoriesCount";
+export type { Categories } from "./Categories";
+export type { CategoriesDatum } from "./Categories";
