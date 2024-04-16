@@ -22,10 +22,10 @@ export function CategoriesList({ URLSegment, dataList }: Props) {
 
   return (
     <nav className="my-4">
-      <ul className="flex flex-col gap-[11px]">
+      <ul className="flex flex-col gap-[11px] capitalize">
         <CategoryListItem
-          slug={`all-${URLSegment}s`}
-          name="All Blogs"
+          slug={`all`}
+          name={`All ${URLSegment}s`}
           URLSegment={URLSegment}
           categoryCount={totalCount}
         />
