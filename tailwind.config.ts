@@ -17,6 +17,16 @@ const config: Config = {
         subHeading: "#121212",
         bodyFont: "#121212",
       },
+      animation: {
+        fadeIn: "fadeIn .6s ease-in-out",
+      },
+
+      keyframes: {
+        fadeIn: {
+          from: { opacity: "0" },
+          to: { opacity: "1" },
+        },
+      },
     },
   },
   plugins: [],
