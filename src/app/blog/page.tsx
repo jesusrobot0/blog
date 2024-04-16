@@ -1,9 +1,16 @@
-import { HeroWithCategories } from "@/blog-pages/components";
+import { HeroWithCategoryList } from "@/blog-pages/components";
+import { getCategoriesCount } from "@/categories/api";
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const { data } = await getCategoriesCount();
+
   return (
     <>
-      <HeroWithCategories />
+      <HeroWithCategoryList
+        title="Sharing is caring so we make time to write about our experience."
+        URLSegment="blog"
+        categories={data}
+      />
     </>
   );
 }

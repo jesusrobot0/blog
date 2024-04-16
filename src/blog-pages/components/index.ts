@@ -1,1 +1,1 @@
-export { HeroWithCategories } from "./HeroWithCategories";
+export { HeroWithCategoryList } from "./HeroWithCategoryList";
