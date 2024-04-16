@@ -1,4 +1,4 @@
-import { Wrapper } from "@/components/ui";
+import { Wrapper } from "@/ui/components";
 import { CategoriesList } from "@/categories/components";
 import { CategoriesCountDatum } from "@/categories/interfaces";
 
