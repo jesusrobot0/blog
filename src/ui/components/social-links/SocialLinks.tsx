@@ -43,9 +43,19 @@ export function SocialLinks({ color }: Props) {
           title={`Link to our ${text} profile`}
         >
           {color === "gray" ? (
-            <img src={iconGrayPath} alt={`${text} Icon`} />
+            <img
+              src={iconGrayPath}
+              alt={`${text} Icon`}
+              width={24}
+              height={24}
+            />
           ) : (
-            <img src={iconWhitePath} alt={`${text} Icon`} />
+            <img
+              src={iconWhitePath}
+              alt={`${text} Icon`}
+              width={24}
+              height={24}
+            />
           )}
         </Link>
       ))}
