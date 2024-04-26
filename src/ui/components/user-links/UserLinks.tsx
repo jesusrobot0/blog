@@ -1,5 +1,6 @@
 import Link from "next/link";
 import clsx from "clsx";
+import { SocialLinks } from "..";
 
 const userLinks = [
   { text: "About", path: "/about" },
@@ -7,29 +8,6 @@ const userLinks = [
   { text: "Projects", path: "/projects" },
   { text: "Blog", path: "/blog" },
   { text: "Contact", path: "/contact" },
-];
-
-const socialLinks = [
-  {
-    text: "Facebook",
-    iconPath: "/icons/facebook-icon.svg",
-    path: "https://www.facebook.com/",
-  },
-  {
-    text: "Twitter",
-    iconPath: "/icons/twitter-icon.svg",
-    path: "https://x.com/",
-  },
-  {
-    text: "Instagram",
-    iconPath: "/icons/instagram-icon.svg",
-    path: "https://www.instagram.com/",
-  },
-  {
-    text: "Linkedin",
-    iconPath: "/icons/linkedin-icon.svg",
-    path: "https://www.linkedin.com/",
-  },
 ];
 
 interface Props {
@@ -82,18 +60,9 @@ export function UserLinks({
             </Link>
           </li>
         ))}
-        <div className="w-full h-[46px] mt-[100px] flex justify-center items-center gap-[30px] sm:hidden">
-          {socialLinks.map(({ text, path, iconPath }) => (
-            <Link
-              key={`navigation-social-link-${path}`}
-              href={path}
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-              title={`Link to our ${text} profile`}
-            >
-              <img src={iconPath} alt={`${text} Icon`} />
-            </Link>
-          ))}
+
+        <div className=" w-full h-[46px] mt-[100px] flex justify-center items-center sm:hidden">
+          <SocialLinks color="gray" />
         </div>
       </ul>
 

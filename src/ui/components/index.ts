@@ -3,3 +3,7 @@ export { Navbar } from "./navbar/Navbar";
 export { Logo } from "./logo/Logo";
 export { UserLinks } from "./user-links/UserLinks";
 export { HeroWithCategoryList } from "./hero-with-category-list/HeroWithCategoryList";
+export { Footer } from "./footer/Footer";
+export { CircularButtom } from "./circular-buttom/CircularButtom";
+export { FooterNav } from "./footer-nav/FooterNav";
+export { SocialLinks } from "./social-links/SocialLinks";
