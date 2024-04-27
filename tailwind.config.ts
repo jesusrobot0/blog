@@ -18,7 +18,7 @@ const config: Config = {
         bodyFont: "#121212",
       },
       animation: {
-        fadeIn: "fadeIn .6s ease-in-out",
+        fadeIn: "fadeIn .6s ease-in",
       },
 
       keyframes: {
