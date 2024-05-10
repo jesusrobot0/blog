@@ -1,4 +1,5 @@
-export type { ServicesDatum } from "./services";
-export type { Services } from "./services";
-export type { Categories } from "./Categories";
-export type { CategoriesDatum } from "./Categories";
+export type { ProjectCategories } from "./project-categories";
+export type { ProjectCategoriesDatum } from "./project-categories";
+// Blog Categories
+export type { BlogCategories } from "./blog-categories";
+export type { BlogCategoriesDatum } from "./blog-categories";

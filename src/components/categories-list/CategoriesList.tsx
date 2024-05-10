@@ -1,14 +1,14 @@
 import { CategoryListItem } from "@/components";
-import { CategoriesDatum } from "@/interfaces";
-import { ServicesDatum } from "@/interfaces";
+import { BlogCategoriesDatum } from "@/interfaces";
+import { ProjectCategoriesDatum } from "@/interfaces";
 
 interface Props {
   URLSegment: string;
-  dataList: CategoriesDatum[] | ServicesDatum[];
+  dataList: BlogCategoriesDatum[] | ProjectCategoriesDatum[];
 }
 
-function isCategoriesDatum(data: any): data is CategoriesDatum {
-  return (data as CategoriesDatum).attributes.publications !== undefined;
+function isCategoriesDatum(data: any): data is BlogCategoriesDatum {
+  return (data as BlogCategoriesDatum).attributes.publications !== undefined;
 }
 
 export function CategoriesList({ URLSegment, dataList }: Props) {

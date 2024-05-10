@@ -1,2 +1,2 @@
-export { getCategories } from "./getCategories";
-export { getServices } from "./getServices";
+export { getBlogCategories } from "./getBlogCategories";
+export { getProjectCategories } from "./getProjectCategories";

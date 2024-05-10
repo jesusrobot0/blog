@@ -1,9 +1,9 @@
-export interface Services {
-  data: ServicesDatum[];
+export interface BlogCategories {
+  data: BlogCategoriesDatum[];
   meta: Meta;
 }
 
-export interface ServicesDatum {
+export interface BlogCategoriesDatum {
   id: number;
   attributes: PurpleAttributes;
 }
@@ -11,14 +11,14 @@ export interface ServicesDatum {
 export interface PurpleAttributes {
   name: string;
   slug: string;
-  projects: Projects;
+  publications: Publications;
 }
 
-export interface Projects {
-  data: ProjectsDatum[];
+export interface Publications {
+  data: PublicationsDatum[];
 }
 
-export interface ProjectsDatum {
+export interface PublicationsDatum {
   id: number;
   attributes: FluffyAttributes;
 }

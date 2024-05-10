@@ -1,9 +1,9 @@
-export interface Categories {
-  data: CategoriesDatum[];
+export interface ProjectCategories {
+  data: ProjectCategoriesDatum[];
   meta: Meta;
 }
 
-export interface CategoriesDatum {
+export interface ProjectCategoriesDatum {
   id: number;
   attributes: PurpleAttributes;
 }
@@ -11,14 +11,14 @@ export interface CategoriesDatum {
 export interface PurpleAttributes {
   name: string;
   slug: string;
-  publications: Publications;
+  projects: Projects;
 }
 
-export interface Publications {
-  data: PublicationsDatum[];
+export interface Projects {
+  data: ProjectsDatum[];
 }
 
-export interface PublicationsDatum {
+export interface ProjectsDatum {
   id: number;
   attributes: FluffyAttributes;
 }

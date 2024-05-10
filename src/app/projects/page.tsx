@@ -1,8 +1,8 @@
-import { getServices } from "@/services";
+import { getProjectCategories } from "@/services";
 import { HeroWithCategoryList } from "@/components";
 
 export default async function ProjectsPage() {
-  const { data } = await getServices();
+  const { data } = await getProjectCategories();
   return (
     <>
       <HeroWithCategoryList

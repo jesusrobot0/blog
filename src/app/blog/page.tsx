@@ -1,8 +1,8 @@
 import { HeroWithCategoryList, PostList } from "@/components";
-import { getCategories } from "@/services";
+import { getBlogCategories } from "@/services";
 
 export default async function BlogPage() {
-  const { data } = await getCategories();
+  const { data } = await getBlogCategories();
 
   return (
     <>
