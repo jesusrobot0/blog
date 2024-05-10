@@ -1,5 +1,5 @@
-import { getServices } from "@/projects/api";
-import { HeroWithCategoryList } from "@/ui/components";
+import { getServices } from "@/services";
+import { HeroWithCategoryList } from "@/components";
 
 export default async function ProjectsPage() {
   const { data } = await getServices();
@@ -7,7 +7,7 @@ export default async function ProjectsPage() {
     <>
       <HeroWithCategoryList
         title="We are here to support your brands, goods, services, and worldviews."
-        URLSegment="projects"
+        URLSegment="project"
         dataList={data}
       />
     </>

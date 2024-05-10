@@ -1,5 +1,5 @@
-import { HeroWithCategoryList } from "@/ui/components";
-import { getCategories } from "@/categories/api";
+import { HeroWithCategoryList, PostList } from "@/components";
+import { getCategories } from "@/services";
 
 export default async function BlogPage() {
   const { data } = await getCategories();
@@ -11,6 +11,7 @@ export default async function BlogPage() {
         URLSegment="blog"
         dataList={data}
       />
+      <PostList />
     </>
   );
 }

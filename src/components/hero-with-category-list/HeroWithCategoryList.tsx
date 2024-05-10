@@ -1,5 +1,5 @@
-import { Wrapper } from "@/ui/components";
-import { CategoriesList } from "@/categories/components";
+import { Wrapper } from "@/components";
+import { CategoriesList } from "@/components";
 import { CategoriesDatum } from "@/categories/interfaces";
 import { ServicesDatum } from "@/projects/interfaces";
 

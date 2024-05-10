@@ -7,3 +7,6 @@ export { Footer } from "./footer/Footer";
 export { CircularButtom } from "./circular-buttom/CircularButtom";
 export { FooterNav } from "./footer-nav/FooterNav";
 export { SocialLinks } from "./social-links/SocialLinks";
+export { PostList } from "./post-list/PostList";
+export { CategoriesList } from "./categories-list/CategoriesList";
+export { CategoryListItem } from "./category-list-item/CategoryListItem";

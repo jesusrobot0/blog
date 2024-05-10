@@ -1,6 +1,6 @@
-import { CategoryListItem } from "@/categories/components";
-import { CategoriesDatum } from "@/categories/interfaces";
-import { ServicesDatum } from "@/projects/interfaces";
+import { CategoryListItem } from "@/components";
+import { CategoriesDatum } from "@/interfaces";
+import { ServicesDatum } from "@/interfaces";
 
 interface Props {
   URLSegment: string;

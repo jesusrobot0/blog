@@ -1,4 +1,4 @@
-import { Categories } from "../interfaces";
+import { Categories } from "@/interfaces";
 
 export async function getCategories(): Promise<Categories> {
   const endpoint =
