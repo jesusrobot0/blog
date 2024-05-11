@@ -20,7 +20,16 @@ export function Footer() {
               <Link href="#">© 2022 Keeper, All rights reserved</Link>
               <Link href="#">Privacy Policy</Link>
             </div>
-            <Link href="#">Made by Slab! Design Studio</Link>
+            <p>
+              Designed by{" "}
+              <Link href="#" className="underline">
+                Slab!
+              </Link>
+              , Developed by{" "}
+              <Link href="#" className="underline">
+                Jesús Velasco
+              </Link>
+            </p>
           </div>
         </div>
       </Wrapper>
