@@ -1,5 +1,6 @@
 import { PostCard } from "../post-card/PostCard";
 import { Wrapper } from "../wrapper/Wrapper";
+import { Post } from "@/interfaces";
 
 const posts = [
   {
@@ -84,13 +85,17 @@ const posts = [
   },
 ];
 
-export function PostList() {
+interface Props {
+  dataPosts: Post[];
+}
+
+export function PostList({ dataPosts }: Props) {
   return (
     <main>
       <Wrapper>
-        <div className="my-[60px] flex flex-col gap-[60px] [&>*:last-child]:border-b-0">
-          {posts.map((post) => (
-            <PostCard key={post.slug} post={post} />
+        <div className="flex flex-col gap-[60px] [&>*:last-child]:border-b-0">
+          {dataPosts.map((post) => (
+            <PostCard key={post.attributes.slug} post={post} />
           ))}
         </div>
       </Wrapper>
