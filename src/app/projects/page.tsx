@@ -2,14 +2,18 @@ import { getProjectCategories } from "@/services";
 import { HeroWithCategoryList } from "@/components";
 
 export default async function ProjectsPage() {
-  const { data } = await getProjectCategories();
+  /**
+   * ME TEMO QUE LOS DATOS ACTUALES SON INCORRECTOS
+   */
+  // const { data, meta } = await getProjectCategories();
   return (
     <>
-      <HeroWithCategoryList
+      {/* <HeroWithCategoryList
         title="We are here to support your brands, goods, services, and worldviews."
         URLSegment="project"
         dataList={data}
-      />
+        totalPages={meta.pagination.total}
+      /> */}
     </>
   );
 }
