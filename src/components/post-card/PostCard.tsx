@@ -41,7 +41,7 @@ export function PostCard({ post }: { post: any }) {
               <li key={category.slug}>
                 <Link
                   href={category.slug}
-                  className="px-[14px] py-[4px] text-[18px] tracking-[0.9px] uppercase text-[#898989] rounded-full bg-[#EDEDED]"
+                  className="px-[14px] py-[4px] text-[18px] tracking-[0.9px] uppercase text-[#6a6a6a] rounded-full bg-[#EDEDED]"
                 >
                   {category.name}
                 </Link>
