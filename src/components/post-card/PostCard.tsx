@@ -40,7 +40,7 @@ export function PostCard({ post }: Props) {
           className="w-full h-[240px] object-cover object-center sm:h-[370px] min-[1200px]:min-w-[530px]"
         />
       </aside>
-      <div className="flex flex-col gap-[30px] min-[1200px]:justify-between">
+      <div className="w-full flex flex-col gap-[30px] min-[1200px]:justify-between">
         <header className="flex justify-between">
           <h2 className="w-10/12 text-[32px] leading-[42px] tracking-[-.45px] sm:text-[48px] sm:leading-[64px] md:w-7/12 min-[1200px]:w-9/12">
             {post.attributes.title}
