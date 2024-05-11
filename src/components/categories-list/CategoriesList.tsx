@@ -5,21 +5,14 @@ import { ProjectCategoriesDatum } from "@/interfaces";
 interface Props {
   URLSegment: string;
   dataList: BlogCategoriesDatum[] | ProjectCategoriesDatum[];
+  totalPages: number;
 }
 
 function isCategoriesDatum(data: any): data is BlogCategoriesDatum {
   return (data as BlogCategoriesDatum).attributes.publications !== undefined;
 }
 
-export function CategoriesList({ URLSegment, dataList }: Props) {
-  const totalCount = dataList.reduce((total, item) => {
-    if (isCategoriesDatum(item)) {
-      return total + item.attributes.publications.data.length;
-    } else {
-      return total + item.attributes.projects.data.length;
-    }
-  }, 0);
-
+export function CategoriesList({ URLSegment, dataList, totalPages }: Props) {
   return (
     <nav className="my-4">
       <ul className="flex flex-col gap-[11px] capitalize">
@@ -27,7 +20,7 @@ export function CategoriesList({ URLSegment, dataList }: Props) {
           slug={`all`}
           name={`All ${URLSegment}s`}
           URLSegment={URLSegment}
-          categoryCount={totalCount}
+          categoryCount={totalPages}
         />
 
         {dataList.map((category) => (
