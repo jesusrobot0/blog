@@ -22,11 +22,19 @@ export function Footer() {
             </div>
             <p>
               Designed by{" "}
-              <Link href="#" className="underline">
+              <Link
+                href="https://slabdsgn.com/"
+                target="_blank"
+                className="underline"
+              >
                 Slab!
               </Link>
               , Developed by{" "}
-              <Link href="#" className="underline">
+              <Link
+                href="https://github.com/jesusrobot0"
+                target="_blank"
+                className="underline"
+              >
                 Jesús Velasco
               </Link>
             </p>
