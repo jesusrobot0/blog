@@ -4,8 +4,8 @@ import { SocialLinks } from "..";
 
 const userLinks = [
   { text: "About", path: "/about" },
-  { text: "Services", path: "/services" },
-  { text: "Projects", path: "/projects" },
+  // { text: "Services", path: "/services" },
+  // { text: "Projects", path: "/projects" },
   { text: "Blog", path: "/blog" },
   { text: "Contact", path: "/contact" },
 ];
