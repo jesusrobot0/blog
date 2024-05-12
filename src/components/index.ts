@@ -10,3 +10,4 @@ export { SocialLinks } from "./social-links/SocialLinks";
 export { PostList } from "./post-list/PostList";
 export { CategoriesList } from "./categories-list/CategoriesList";
 export { CategoryListItem } from "./category-list-item/CategoryListItem";
+export { FancyLink } from "./fancy-link/FancyLink";
