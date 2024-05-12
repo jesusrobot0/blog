@@ -10,9 +10,9 @@ interface Props {
 
 export function PostList({ dataPosts }: Props) {
   return (
-    <main className="mb-[130px]">
+    <main className="mb-[60px]">
       <Wrapper>
-        <div className="flex flex-col gap-[60px] [&>*:last-child]:border-b-0">
+        <div className="mb-[70px] flex flex-col gap-[60px] [&>*:last-child]:border-b-0">
           {dataPosts.map((post) => (
             <PostCard key={post.attributes.slug} post={post} />
           ))}

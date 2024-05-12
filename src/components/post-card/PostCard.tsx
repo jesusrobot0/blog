@@ -87,6 +87,7 @@ export function PostCard({ post }: Props) {
       <Link
         href={`/blog/${post.attributes.slug}`}
         className="absolute top-0 bottom-0 w-full cursor-pointer"
+        aria-label={`Go to blog post: ${post.attributes.title}`}
       ></Link>
     </article>
   );
