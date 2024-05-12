@@ -41,7 +41,7 @@ export function UserLinks({
               <span className="group-hover:text-[#aa9d95] group-hover:pl-7 transition-all duration-300 sm:transition-none sm:group-hover:pl-0 sm:group-hover:text-current">
                 {text}
               </span>
-              <span className="-rotate-45 mr-4 group-hover:bg-[#aa9d95] group-hover:p-2 group-hover:rounded-full group-hover:rotate-0 group-hover:text-textAccent transition-all duration-200 sm:hidden">
+              <span className="-rotate-45 mr-4 group-hover:bg-[#aa9d95] group-hover:p-2 group-hover:rounded-full group-hover:rotate-0 group-hover:text-textAccent transition-all duration-100 sm:hidden">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"

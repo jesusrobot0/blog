@@ -38,7 +38,7 @@ export function Navbar() {
   return (
     <div
       className={clsx(
-        "fixed w-screen bg-background transition-colors duration-200 ease-linear z-10",
+        "fixed w-screen bg-background transition-colors duration-200 ease-linear z-20",
         { "bg-white": isNavbarScrolled },
         { "bg-white": isMenuOpen }
       )}
