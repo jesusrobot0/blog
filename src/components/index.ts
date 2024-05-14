@@ -8,6 +8,8 @@ export { CircularButtom } from "./circular-buttom/CircularButtom";
 export { FooterNav } from "./footer-nav/FooterNav";
 export { SocialLinks } from "./social-links/SocialLinks";
 export { PostList } from "./post-list/PostList";
+export { PostCard } from "./post-card/PostCard";
 export { CategoriesList } from "./categories-list/CategoriesList";
 export { CategoryListItem } from "./category-list-item/CategoryListItem";
 export { FancyLink } from "./fancy-link/FancyLink";
+export { CategoryHeader } from "./category-header/CategoryHeader";

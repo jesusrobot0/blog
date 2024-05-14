@@ -1,10 +1,16 @@
-import { HeroWithCategoryList, PostList } from "@/components";
+import {
+  FancyLink,
+  HeroWithCategoryList,
+  PostList,
+  Wrapper,
+} from "@/components";
 import { getBlogCategories } from "@/services";
-import { getBlogPosts } from "@/services/getBlogPosts";
+import { getBlogPosts } from "@/services";
 
 export default async function BlogPage() {
   const { data: BlogCategories, meta } = await getBlogCategories();
   const { data: BlogPosts } = await getBlogPosts(1, 7);
+
   return (
     <>
       <HeroWithCategoryList
@@ -13,7 +19,10 @@ export default async function BlogPage() {
         dataList={BlogCategories}
         totalPages={meta.pagination.total}
       />
-      <PostList dataPosts={BlogPosts} />
+      <Wrapper className="mb-[60px]">
+        <PostList dataPosts={BlogPosts} />
+        <FancyLink href="/blog/category/all" text="View All Blogs" />
+      </Wrapper>
     </>
   );
 }
