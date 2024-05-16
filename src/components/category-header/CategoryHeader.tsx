@@ -1,9 +1,9 @@
 interface Props {
   category: string;
-  postCount: number;
+  totalPosts: number;
 }
 
-export function CategoryHeader({ category, postCount }: Props) {
+export function CategoryHeader({ category, totalPosts }: Props) {
   const categoryFormatted = category.split("-").join(" ");
 
   return (
@@ -17,7 +17,7 @@ export function CategoryHeader({ category, postCount }: Props) {
             </span>
           </h1>
           <p className="text-[18px] min-[1200px]:text-[22px]">
-            {postCount} articles
+            {totalPosts} articles
           </p>
         </div>
         <button className="w-full h-[38px] px-[22px] flex items-center justify-center gap-1 text-[18px] border border-[#E3E3E3] rounded-full bg-[#ECECEC] sm:w-fit">
