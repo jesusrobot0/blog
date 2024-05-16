@@ -10,7 +10,7 @@ export function PostList({ dataPosts }: Props) {
     <main className="mb-[70px]">
       <div className="flex flex-col gap-[60px] [&>*:last-child]:border-b-0">
         {dataPosts.map((post) => (
-          <PostCard key={post.attributes.slug} post={post} />
+          <PostCard key={`post-with-${post.id}-of-post-list`} post={post} />
         ))}
       </div>
     </main>
