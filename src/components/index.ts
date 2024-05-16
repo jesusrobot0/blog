@@ -13,3 +13,6 @@ export { CategoriesList } from "./categories-list/CategoriesList";
 export { CategoryListItem } from "./category-list-item/CategoryListItem";
 export { FancyLink } from "./fancy-link/FancyLink";
 export { CategoryHeader } from "./category-header/CategoryHeader";
+export { CategoryPosts } from "./category-posts/CategoryPosts";
+export { LoadMoreButton } from "./load-more-button/LoadMoreButton";
+export { Loader } from "./loader/Loader";
