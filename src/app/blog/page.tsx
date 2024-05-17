@@ -17,7 +17,6 @@ export default async function BlogPage() {
     category: "all",
   });
   const totalPosts = meta.pagination.total;
-  console.log(meta);
 
   return (
     <>
