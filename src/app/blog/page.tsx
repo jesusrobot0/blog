@@ -11,11 +11,11 @@ export default async function BlogPage() {
   const initialPage = 1;
   const paginationPage = 7;
   const { data: BlogCategories } = await getBlogCategories();
-  const { data: BlogPosts, meta } = await getBlogPosts(
-    initialPage,
-    paginationPage,
-    "all"
-  );
+  const { data: BlogPosts, meta } = await getBlogPosts({
+    page: initialPage,
+    take: paginationPage,
+    category: "all",
+  });
   const totalPosts = meta.pagination.total;
   console.log(meta);
 

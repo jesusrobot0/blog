@@ -9,6 +9,6 @@ interface Args {
 }
 
 export async function getBlogPostsbyCategory({ page, take, category }: Args) {
-  const posts = await getBlogPosts(page, take, category);
+  const posts = await getBlogPosts({ page, take, category });
   return posts;
 }

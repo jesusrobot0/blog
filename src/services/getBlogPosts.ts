@@ -1,10 +1,16 @@
 import { BlogPosts } from "@/interfaces";
 
-export async function getBlogPosts(
-  page: number,
-  take: number,
-  category: string
-): Promise<BlogPosts> {
+interface Args {
+  page: number;
+  take: number;
+  category: string;
+}
+
+export async function getBlogPosts({
+  page,
+  take,
+  category,
+}: Args): Promise<BlogPosts> {
   const base = "https://blog-api-dashboard-production.up.railway.app";
   const categoryFilter =
     category && category !== "all"
