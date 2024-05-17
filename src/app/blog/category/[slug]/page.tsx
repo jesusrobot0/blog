@@ -10,11 +10,11 @@ interface Props {
 export default async function BlogCategoryPage({
   params: { slug: category },
 }: Props) {
-  const INITIAL_PAGE = 1;
-  const PAGINATION_TAKE = 7;
+  const initialPage = 1;
+  const paginationPage = 7;
   const { data: posts, meta } = await getBlogPosts(
-    INITIAL_PAGE,
-    PAGINATION_TAKE,
+    initialPage,
+    paginationPage,
     category
   );
   const totalPosts = meta.pagination.total;
@@ -26,7 +26,7 @@ export default async function BlogCategoryPage({
       <CategoryPosts
         posts={posts}
         pageCount={pageCount}
-        take={PAGINATION_TAKE}
+        take={paginationPage}
       />
     </Wrapper>
   );

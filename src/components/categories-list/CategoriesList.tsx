@@ -5,14 +5,14 @@ import { ProjectCategoriesDatum } from "@/interfaces";
 interface Props {
   URLSegment: string;
   dataList: BlogCategoriesDatum[] | ProjectCategoriesDatum[];
-  totalPages: number;
+  totalPosts: number;
 }
 
 function isCategoriesDatum(data: any): data is BlogCategoriesDatum {
   return (data as BlogCategoriesDatum).attributes.publications !== undefined;
 }
 
-export function CategoriesList({ URLSegment, dataList, totalPages }: Props) {
+export function CategoriesList({ URLSegment, dataList, totalPosts }: Props) {
   return (
     <nav className="my-4">
       <ul className="flex flex-col gap-[11px] capitalize">
@@ -20,7 +20,7 @@ export function CategoriesList({ URLSegment, dataList, totalPages }: Props) {
           slug={`all`}
           name={`All ${URLSegment}s`}
           URLSegment={URLSegment}
-          categoryCount={totalPages}
+          categoryCount={totalPosts}
         />
 
         {dataList.map((category) => (

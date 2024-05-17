@@ -3,7 +3,7 @@ import { BlogPosts } from "@/interfaces";
 export async function getBlogPosts(
   page: number,
   take: number,
-  category?: string
+  category: string
 ): Promise<BlogPosts> {
   const base = "https://blog-api-dashboard-production.up.railway.app";
   const categoryFilter =

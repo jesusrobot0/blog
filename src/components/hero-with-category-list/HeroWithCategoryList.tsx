@@ -7,14 +7,14 @@ interface Props {
   title: string;
   URLSegment: string;
   dataList: BlogCategoriesDatum[] | ProjectCategoriesDatum[];
-  totalPages: number;
+  totalPosts: number;
 }
 
 export function HeroWithCategoryList({
   dataList,
   URLSegment,
   title,
-  totalPages,
+  totalPosts,
 }: Props) {
   return (
     <header className="pt-[120px] pb-[80px] bg-background min-[1200px]:pt-[200px] min-[1200px]:pb-[100px]">
@@ -26,7 +26,7 @@ export function HeroWithCategoryList({
           <CategoriesList
             URLSegment={URLSegment}
             dataList={dataList}
-            totalPages={totalPages}
+            totalPosts={totalPosts}
           />
         </div>
       </Wrapper>

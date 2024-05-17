@@ -8,8 +8,16 @@ import { getBlogCategories } from "@/services";
 import { getBlogPosts } from "@/services";
 
 export default async function BlogPage() {
-  const { data: BlogCategories, meta } = await getBlogCategories();
-  const { data: BlogPosts } = await getBlogPosts(1, 7);
+  const initialPage = 1;
+  const paginationPage = 7;
+  const { data: BlogCategories } = await getBlogCategories();
+  const { data: BlogPosts, meta } = await getBlogPosts(
+    initialPage,
+    paginationPage,
+    "all"
+  );
+  const totalPosts = meta.pagination.total;
+  console.log(meta);
 
   return (
     <>
@@ -17,7 +25,7 @@ export default async function BlogPage() {
         title="Sharing is caring so we make time to write about our experience."
         URLSegment="blog"
         dataList={BlogCategories}
-        totalPages={meta.pagination.total}
+        totalPosts={totalPosts}
       />
       <Wrapper className="mb-[60px]">
         <PostList dataPosts={BlogPosts} />
