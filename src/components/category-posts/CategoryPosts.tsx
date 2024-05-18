@@ -25,11 +25,11 @@ export function CategoryPosts({ posts, pageCount, take }: Props) {
       <PostList dataPosts={postList} />
 
       <div className="mb-[70px] flex flex-col gap-[35px] sm:flex-row">
-        {currentPage < pageCount && (
-          <LoadMoreButton text="Load More" onLoadMore={handleLoadMore} />
-        )}
         {currentPage > 1 && (
           <BackButton text="Load Previous" onBack={handleBack} />
+        )}
+        {currentPage < pageCount && (
+          <LoadMoreButton text="Load More" onLoadMore={handleLoadMore} />
         )}
 
         {(isLoading.isLoading || isLoading.isLoadingBack) && <Loader />}
