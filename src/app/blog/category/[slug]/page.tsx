@@ -5,13 +5,17 @@ interface Props {
   params: {
     slug: string;
   };
+  searchParams: {
+    page: string;
+  };
 }
 
 export default async function BlogCategoryPage({
   params: { slug: category },
+  searchParams: { page },
 }: Props) {
-  const initialPage = 1;
-  const paginationTake = 7;
+  const initialPage = Number(page) || 1;
+  const paginationTake = 2; // TODO: Restablecer a 7 (para producción)
   const { data: posts, meta } = await getBlogPosts({
     page: initialPage,
     take: paginationTake,
