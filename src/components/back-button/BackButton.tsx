@@ -2,14 +2,14 @@ import { Loader } from "@/components";
 
 interface Props {
   text: string;
-  onLoadMore: () => void;
+  onBack: () => void;
 }
 
-export function LoadMoreButton({ text, onLoadMore }: Props) {
+export function BackButton({ text, onBack }: Props) {
   return (
     <button
-      onClick={onLoadMore}
       className="overflow-hidden w-[258px] h-[52px] flex justify-center items-center gap-3 text-[18px] tracking-[.9px] uppercase border border-[#121212] rounded-full group hover:border-transparent hover:bg-[#AD9C94] transition-colors duration-500"
+      onClick={onBack}
     >
       <div className="relative flex flex-col">
         <span className="relative top-0 group-hover:top-[-40px] group-hover:text-white transition-all duration-100">
@@ -19,11 +19,10 @@ export function LoadMoreButton({ text, onLoadMore }: Props) {
           {text}
         </span>
       </div>
-
-      <div className="flex justify-center items-center w-[30px] h-[30px] rounded-full bg-white group-hover:rotate-90 transition-transform duration-300">
+      <div className="flex justify-center items-center w-[30px] h-[30px] rounded-full bg-white group-hover:-rotate-[135deg] transition-transform duration-300">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="w-[25px] h-[25px]"
+          className="w-[25px] h-[25px] group-hover:text-white"
           viewBox="0 0 50 50"
         >
           <g transform="translate(0.364 0.756)" id="ss3522480518_1">

@@ -16,3 +16,4 @@ export { CategoryHeader } from "./category-header/CategoryHeader";
 export { CategoryPosts } from "./category-posts/CategoryPosts";
 export { LoadMoreButton } from "./load-more-button/LoadMoreButton";
 export { Loader } from "./loader/Loader";
+export { BackButton } from "./back-button/BackButton";
