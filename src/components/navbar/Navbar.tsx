@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import clsx from "clsx";
-import { Logo, UserLinks } from "../";
+import { Logo, UserLinks } from "@/components";
 
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -39,8 +39,7 @@ export function Navbar() {
     <div
       className={clsx(
         "fixed w-screen bg-background transition-colors duration-200 ease-linear z-20",
-        { "bg-white": isNavbarScrolled },
-        { "bg-white": isMenuOpen }
+        { "bg-white": isNavbarScrolled || isMenuOpen }
       )}
     >
       <nav className="w-[90%] max-w-[1440px] h-[74px] mx-auto flex justify-between items-center text-textAccent border-b border-b-[#8f7b71]">
