@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { usePaginationPosts } from "@/hooks";
 import { BackButton, LoadMoreButton, Loader, PostList } from "@/components";
 import { Post } from "@/interfaces";
@@ -32,7 +32,7 @@ export function CategoryPosts({ posts, pageCount, take }: Props) {
           <LoadMoreButton text="Load More" onLoadMore={handleLoadMore} />
         )}
 
-        {(isLoading.isLoading || isLoading.isLoadingBack) && <Loader />}
+        {isLoading && <Loader />}
       </div>
     </main>
   );

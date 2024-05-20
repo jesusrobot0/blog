@@ -11,34 +11,38 @@ interface Props {
 
 export function usePaginationPosts({ take, postList, setPostList }: Props) {
   const [isLoading, setIsLoading] = useState(false);
-  const [isLoadingBack, setIsLoadingBack] = useState(false);
   const currentPath = usePathname();
   const searchParams = useSearchParams();
   const router = useRouter();
 
   const params = new URLSearchParams(searchParams);
   const currentPage = Number(params.get("page")) || 1;
-  const category = currentPath.split("/").slice(-1)[0];
 
   const createPageUrl = (newPage: number) => {
     params.set("page", String(newPage));
     router.replace(`${currentPath}?${params.toString()}`, { scroll: false });
   };
 
-  const handleLoadMore = async () => {
+  const getPosts = async (newPage: number) => {
+    const category = currentPath.split("/").slice(-1)[0];
+
     setIsLoading(true);
-    const newPage = currentPage + 1;
     const { data: newPosts } = await getBlogPostsbyCategory({
       page: newPage,
       take: take,
       category,
     });
+    setIsLoading(false);
+
+    return newPosts;
+  };
+
+  const handleLoadMore = async () => {
+    const newPage = currentPage + 1;
+    const newPosts = await getPosts(newPage);
 
     createPageUrl(newPage);
     setPostList([...postList, ...newPosts]);
-    // setPostList([...newPosts]);
-
-    setIsLoading(false);
   };
 
   // BackButton
@@ -50,25 +54,51 @@ export function usePaginationPosts({ take, postList, setPostList }: Props) {
       if (numberPostsOfLastPage === 0) {
         const newPosts = postList.slice(0, -take);
         setPostList(newPosts);
+        // No me siento orgulloso de esto. Pero... ¡FUNCIONA!
+        // TODO: usar una referencia
+        const secondPage = take + take;
+        if (postList.length !== secondPage) {
+          // SCROLL MGMT
+          const lastPage = document.getElementById(
+            `post-with-key-${postList.length - secondPage}-of-post-list`
+          );
+          lastPage?.scrollIntoView({ behavior: "smooth" });
+        } else {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        }
       } else {
         const newPosts = postList.slice(0, -numberPostsOfLastPage);
         setPostList(newPosts);
+
+        // No me siento orgulloso de esto. Pero... ¡FUNCIONA!
+        // TODO: usar una referencia
+        const secondPage = take + take;
+        if (postList.length !== secondPage) {
+          // SCROLL MGMT
+          const lastPage = document.getElementById(
+            `post-with-key-${
+              postList.length - (numberPostsOfLastPage + numberPostsOfLastPage)
+            }-of-post-list`
+          );
+          lastPage?.scrollIntoView({ behavior: "smooth" });
+        } else {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        }
       }
     } else {
-      setIsLoadingBack(true);
-      const { data: newPosts } = await getBlogPostsbyCategory({
-        page: newPage,
-        take: take,
-        category,
-      });
+      const newPosts = await getPosts(newPage);
       setPostList(newPosts);
 
       window.scrollTo({
         top: 0,
         behavior: "smooth",
       });
-
-      setIsLoadingBack(false);
     }
 
     createPageUrl(newPage);
@@ -76,7 +106,7 @@ export function usePaginationPosts({ take, postList, setPostList }: Props) {
 
   return {
     currentPage,
-    isLoading: { isLoading, isLoadingBack },
+    isLoading,
     handleLoadMore,
     handleBack,
   };
