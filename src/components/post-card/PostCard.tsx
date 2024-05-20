@@ -4,6 +4,7 @@ import { Post } from "@/interfaces";
 
 interface Props {
   post: Post;
+  priority?: boolean;
 }
 
 function getFormattedDate(date: Date): string {
@@ -28,7 +29,7 @@ function getFormattedDate(date: Date): string {
   return `${month} ${day}, ${year}`;
 }
 
-export function PostCard({ post }: Props) {
+export function PostCard({ post, priority }: Props) {
   return (
     <article className="relative py-[80px] flex flex-col gap-[21px] border-b border-b-[#898989] group min-[1200px]:flex-row min-[1200px]:gap-[100px]">
       <aside>
@@ -37,6 +38,7 @@ export function PostCard({ post }: Props) {
           alt={post.attributes.title}
           width={1024 / 2}
           height={683}
+          priority={priority}
           className="w-full h-[240px] object-cover object-center group-hover:opacity-[.5] transition-opacity duration-300 sm:h-[370px] min-[1200px]:min-w-[530px]"
         />
       </aside>
