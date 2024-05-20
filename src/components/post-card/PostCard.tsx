@@ -46,7 +46,7 @@ export function PostCard({ post }: Props) {
             {post.attributes.title}
           </h2>
           <div className="w-2/12 flex justify-center pt-[10px] sm:pt-6 min-[1200px]:justify-end">
-            <div className="w-[80px] h-[80px]  flex justify-center items-center rounded-full rotate-12 group-hover:bg-[#121212] group-hover:rotate-45  transition-all duration-300 ease-out">
+            <div className="min-w-[60px] h-[60px]  flex justify-center items-center rounded-full rotate-12 group-hover:bg-[#121212] group-hover:rotate-45  transition-all duration-300 ease-out sm:min-w-[80px] sm:h-[80px]">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="w-[50px] h-[50px] group-hover:text-white"
