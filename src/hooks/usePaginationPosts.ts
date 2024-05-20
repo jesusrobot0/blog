@@ -1,12 +1,23 @@
-import { usePathname, useSearchParams, useRouter } from "next/navigation";
+import {
+  usePathname,
+  useSearchParams,
+  useRouter,
+  redirect,
+} from "next/navigation";
 
-export function usePaginationPosts() {
+interface Props {
+  pageCount: number;
+}
+
+export function usePaginationPosts({ pageCount }: Props) {
   const currentPath = usePathname();
   const searchParams = useSearchParams();
   const router = useRouter();
 
   const params = new URLSearchParams(searchParams);
   const currentPage = Number(params.get("page")) || 1;
+
+  if (currentPage > pageCount || currentPage < 1) redirect(currentPath);
 
   const createPageUrl = (newPage: number) => {
     params.set("page", String(newPage));
