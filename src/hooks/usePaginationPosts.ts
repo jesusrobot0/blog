@@ -45,53 +45,42 @@ export function usePaginationPosts({ take, postList, setPostList }: Props) {
     setPostList([...postList, ...newPosts]);
   };
 
-  // BackButton
   const handleBack = async () => {
     const newPage = currentPage - 1;
     const numberPostsOfLastPage = postList.length % take;
 
+    // SÍ HAY UN STACK DE POSTS...
     if (postList.length > take) {
+      const secondPage = take + take;
+      let idElement;
+
+      // Cuando hay una ultima página completa
       if (numberPostsOfLastPage === 0) {
         const newPosts = postList.slice(0, -take);
+        idElement = secondPage;
         setPostList(newPosts);
-        // No me siento orgulloso de esto. Pero... ¡FUNCIONA!
-        // TODO: usar una referencia
-        const secondPage = take + take;
-        if (postList.length !== secondPage) {
-          // SCROLL MGMT
-          const lastPage = document.getElementById(
-            `post-with-key-${postList.length - secondPage}-of-post-list`
-          );
-          lastPage?.scrollIntoView({ behavior: "smooth" });
-        } else {
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-          });
-        }
       } else {
+        // Cuando hay una ultima página incompleta
         const newPosts = postList.slice(0, -numberPostsOfLastPage);
+        idElement = numberPostsOfLastPage + numberPostsOfLastPage;
         setPostList(newPosts);
+      }
 
-        // No me siento orgulloso de esto. Pero... ¡FUNCIONA!
-        // TODO: usar una referencia
-        const secondPage = take + take;
-        if (postList.length !== secondPage) {
-          // SCROLL MGMT
-          const lastPage = document.getElementById(
-            `post-with-key-${
-              postList.length - (numberPostsOfLastPage + numberPostsOfLastPage)
-            }-of-post-list`
-          );
-          lastPage?.scrollIntoView({ behavior: "smooth" });
-        } else {
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-          });
-        }
+      // Maneja el scroll apartir de la segunda página
+      if (postList.length !== secondPage) {
+        const lastPage = document.getElementById(
+          `post-with-key-${postList.length - idElement}-of-post-list`
+        );
+        lastPage?.scrollIntoView({ behavior: "smooth" });
+      } else {
+        // Maneja el scroll en la primera página
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
       }
     } else {
+      // SÍ NO HAY UN STACK DE POSTS...
       const newPosts = await getPosts(newPage);
       setPostList(newPosts);
 
