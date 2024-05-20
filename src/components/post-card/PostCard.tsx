@@ -4,7 +4,6 @@ import { Post } from "@/interfaces";
 
 interface Props {
   post: Post;
-  id: number;
 }
 
 function getFormattedDate(date: Date): string {
@@ -29,13 +28,9 @@ function getFormattedDate(date: Date): string {
   return `${month} ${day}, ${year}`;
 }
 
-export function PostCard({ post, id }: Props) {
-  const postId = `post-with-key-${id}-of-post-list`;
+export function PostCard({ post }: Props) {
   return (
-    <article
-      id={postId}
-      className="relative py-[80px] flex flex-col gap-[21px] border-b border-b-[#898989] group min-[1200px]:flex-row min-[1200px]:gap-[100px]"
-    >
+    <article className="relative py-[80px] flex flex-col gap-[21px] border-b border-b-[#898989] group min-[1200px]:flex-row min-[1200px]:gap-[100px]">
       <aside>
         <Image
           src={post.attributes.cover.data.attributes.url}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { usePaginationPosts } from "@/hooks";
 import { BackButton, LoadMoreButton, Loader, PostList } from "@/components";
 import { Post } from "@/interfaces";
@@ -16,7 +16,6 @@ export function CategoryPosts({ posts, pageCount, take }: Props) {
   const { currentPage, isLoading, handleLoadMore, handleBack } =
     usePaginationPosts({
       take,
-      postList,
       setPostList,
     });
 
