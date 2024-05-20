@@ -1,37 +1,33 @@
 "use client";
 
-import { useState } from "react";
+import { redirect } from "next/navigation";
 import { usePaginationPosts } from "@/hooks";
-import { BackButton, LoadMoreButton, Loader, PostList } from "@/components";
+import { BackButton, LoadMoreButton, PostList } from "@/components";
 import { Post } from "@/interfaces";
 
 interface Props {
   posts: Post[];
   pageCount: number;
-  take: number;
+  category: string;
 }
 
-export function CategoryPosts({ posts, pageCount, take }: Props) {
-  const [postList, setPostList] = useState(posts);
-  const { currentPage, isLoading, handleLoadMore, handleBack } =
-    usePaginationPosts({
-      take,
-      setPostList,
-    });
+export function CategoryPosts({ posts, pageCount, category }: Props) {
+  const { currentPage, handleLoadMore, handleBack } = usePaginationPosts();
+
+  if (currentPage > pageCount || currentPage < 1) {
+    redirect(`/blog/category/${category}`);
+  }
 
   return (
     <main>
-      <PostList dataPosts={postList} />
-
+      <PostList dataPosts={posts} />
       <div className="mb-[70px] flex flex-col gap-[35px] sm:flex-row">
-        {currentPage > 1 && (
+        {currentPage > 1 && currentPage <= pageCount && (
           <BackButton text="Load Previous" onBack={handleBack} />
         )}
         {currentPage < pageCount && (
           <LoadMoreButton text="Load More" onLoadMore={handleLoadMore} />
         )}
-
-        {isLoading && <Loader />}
       </div>
     </main>
   );
