@@ -1,5 +1,5 @@
 import { CategoryHeader, CategoryPosts, Wrapper } from "@/components";
-import { getBlogPosts } from "@/services";
+import { getBlogCategories, getBlogCategory, getBlogPosts } from "@/services";
 
 interface Props {
   params: {
@@ -22,12 +22,18 @@ export default async function BlogCategoryPage({
     take: paginationTake,
     category,
   });
+  const { data } = await getBlogCategory({ category });
 
+  const categoryDescription = data[0].attributes.description;
   const totalPosts = meta.pagination.total;
   const pageCount = meta.pagination.pageCount;
   return (
     <Wrapper className="pt-[120px]">
-      <CategoryHeader category={category} totalPosts={totalPosts} />
+      <CategoryHeader
+        category={category}
+        totalPosts={totalPosts}
+        categoryDescription={categoryDescription}
+      />
       <CategoryPosts posts={posts} pageCount={pageCount} category={category} />
     </Wrapper>
   );

@@ -1,3 +1,3 @@
 export { getBlogCategories } from "./getBlogCategories";
-export { getProjectCategories } from "./getProjectCategories";
+export { getBlogCategory } from "./getBlogCategory";
 export { getBlogPosts } from "./getBlogPosts";
