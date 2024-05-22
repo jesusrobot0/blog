@@ -1,4 +1,3 @@
-import { getProjectCategories } from "@/services";
 import { HeroWithCategoryList } from "@/components";
 
 export default async function ProjectsPage() {
