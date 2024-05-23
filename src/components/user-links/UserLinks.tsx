@@ -12,13 +12,13 @@ const userLinks = [
 
 interface Props {
   isMenuOpen: boolean;
-  isNavbarScrolled: boolean;
+  currentSection: string;
   setIsMenuOpen: (value: boolean) => void;
 }
 
 export function UserLinks({
   isMenuOpen,
-  isNavbarScrolled,
+  currentSection,
   setIsMenuOpen,
 }: Props) {
   return (
@@ -27,7 +27,11 @@ export function UserLinks({
         className={clsx(
           "absolute top-[74px] left-0 w-screen h-screen pt-[75px] flex flex-col items-center sm:gap-10 sm:static sm:w-auto sm:h-auto sm:pt-0 sm:flex sm:flex-row",
           { hidden: !isMenuOpen },
-          { "text-textColor": isNavbarScrolled },
+          {
+            "text-textColor":
+              currentSection === "post-list" ||
+              currentSection === "category-header",
+          },
           { "bg-white text-textColor": isMenuOpen }
         )}
       >
@@ -83,7 +87,11 @@ export function UserLinks({
               {
                 "translate-y-1 rotate-45": isMenuOpen,
               },
-              { "bg-textColor": isNavbarScrolled },
+              {
+                "bg-textColor":
+                  currentSection === "post-list" ||
+                  currentSection === "category-header",
+              },
               { "bg-textColor": isMenuOpen }
             )}
           ></span>
@@ -93,7 +101,11 @@ export function UserLinks({
               {
                 "w-[20.5px] -translate-y-1.5 -rotate-45": isMenuOpen,
               },
-              { "bg-textColor": isNavbarScrolled },
+              {
+                "bg-textColor":
+                  currentSection === "post-list" ||
+                  currentSection === "category-header",
+              },
               { "bg-textColor": isMenuOpen }
             )}
           ></span>
