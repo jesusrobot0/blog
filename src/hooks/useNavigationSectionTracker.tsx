@@ -19,7 +19,6 @@ export function useNavigationSectionTracker({ navHeight, reset }: Props) {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            console.log("currentsection:", entry.target.id);
             setCurrentSection(entry.target.id);
           }
         });
