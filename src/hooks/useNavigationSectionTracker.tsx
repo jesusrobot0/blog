@@ -10,7 +10,6 @@ export function useNavigationSectionTracker({ navHeight, reset }: Props) {
   const observerRef = useRef<IntersectionObserver | null>(null); // *
 
   useEffect(() => {
-    console.log("Cambio a la ruta:", reset);
     if (observerRef.current) {
       observerRef.current.disconnect(); // Desconectar el observer actual
     }
