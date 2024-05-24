@@ -1,3 +1,5 @@
+import { SortButton } from "../sort-button/SortButton";
+
 interface Props {
   category: string;
   totalPosts: number;
@@ -28,9 +30,7 @@ export function CategoryHeader({
         </p>
       </div>
       <div className="flex gap-5">
-        <button className="w-fit h-[42px] px-10  font-bold font-sans rounded-full bg-gray-200">
-          Sort
-        </button>
+        <SortButton />
       </div>
     </header>
   );
