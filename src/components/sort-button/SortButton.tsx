@@ -32,6 +32,10 @@ export function SortButton() {
     setToggle(!toggle);
   };
 
+  const handleCancel = () => {
+    setToggle(!toggle);
+  };
+
   useEffect(() => {
     const body = document.body;
     if (toggle) {
@@ -113,7 +117,13 @@ export function SortButton() {
             </label>
           </fieldset>
           <fieldset className=" w-[170px] flex justify-between">
-            <button className="w-1/2 py-2 text-[#666]">Cancel</button>
+            <button
+              type="button"
+              className="w-1/2 py-2 text-[#666]"
+              onClick={handleCancel}
+            >
+              Cancel
+            </button>
             <button type="submit" className="w-1/2 py-2">
               Apply
             </button>

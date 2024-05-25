@@ -7,12 +7,13 @@ interface Props {
   };
   searchParams: {
     page: string;
+    sortBy: string;
   };
 }
 
 export default async function BlogCategoryPage({
   params: { slug: category },
-  searchParams: { page },
+  searchParams: { page, sortBy },
 }: Props) {
   const initialPage = Number(page) || 1;
   const paginationTake = 2; // TODO: Restablecer a 7 (para producción)
@@ -20,13 +21,15 @@ export default async function BlogCategoryPage({
   const { data: posts, meta } = await getBlogPosts({
     page: initialPage,
     take: paginationTake,
+    sort: sortBy,
     category,
   });
+
   const { data } = await getBlogCategory({ category });
 
-  const categoryDescription = data[0].attributes.description;
-  const totalPosts = meta.pagination.total;
-  const pageCount = meta.pagination.pageCount;
+  const categoryDescription = data[0]?.attributes.description;
+  const totalPosts = meta?.pagination.total;
+  const pageCount = meta?.pagination.pageCount;
   return (
     <Wrapper className="pt-[120px]">
       <CategoryHeader
