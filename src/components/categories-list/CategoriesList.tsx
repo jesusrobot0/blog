@@ -23,19 +23,22 @@ export function CategoriesList({ URLSegment, dataList, totalPosts }: Props) {
           categoryCount={totalPosts}
         />
 
-        {dataList.map((category) => (
-          <CategoryListItem
-            key={`hero-categoriesList-item-${category.id}`}
-            slug={category.attributes.slug}
-            name={category.attributes.name}
-            URLSegment={URLSegment}
-            categoryCount={
-              isCategoriesDatum(category)
-                ? category.attributes.publications.data.length
-                : category.attributes.projects.data.length
-            }
-          />
-        ))}
+        {dataList.map((category) => {
+          if (category.attributes.name === "All Blogs") return;
+          return (
+            <CategoryListItem
+              key={`hero-categoriesList-item-${category.id}`}
+              slug={category.attributes.slug}
+              name={category.attributes.name}
+              URLSegment={URLSegment}
+              categoryCount={
+                isCategoriesDatum(category)
+                  ? category.attributes.publications.data.length
+                  : category.attributes.projects.data.length
+              }
+            />
+          );
+        })}
       </ul>
     </nav>
   );

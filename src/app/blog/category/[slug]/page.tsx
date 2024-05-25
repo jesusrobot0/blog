@@ -1,5 +1,5 @@
 import { CategoryHeader, CategoryPosts, Wrapper } from "@/components";
-import { getBlogCategories, getBlogCategory, getBlogPosts } from "@/services";
+import { getBlogCategory, getBlogPosts } from "@/services";
 
 interface Props {
   params: {
