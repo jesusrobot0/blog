@@ -14,6 +14,7 @@ export default async function BlogPage() {
   const { data: BlogPosts, meta } = await getBlogPosts({
     page: initialPage,
     take: paginationPage,
+    sort: "newest",
     category: "all",
   });
   const totalPosts = meta.pagination.total;
