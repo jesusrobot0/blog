@@ -1,7 +1,5 @@
-import { Wrapper } from "@/components";
-import { CategoriesList } from "@/components";
-import { BlogCategoriesDatum } from "@/interfaces";
-import { ProjectCategoriesDatum } from "@/interfaces";
+import { Wrapper, CategoriesList } from "@/components";
+import { BlogCategoriesDatum, ProjectCategoriesDatum } from "@/interfaces";
 
 interface Props {
   title: string;

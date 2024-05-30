@@ -1,6 +1,5 @@
 import { CategoryListItem } from "@/components";
-import { BlogCategoriesDatum } from "@/interfaces";
-import { ProjectCategoriesDatum } from "@/interfaces";
+import { BlogCategoriesDatum, ProjectCategoriesDatum } from "@/interfaces";
 
 interface Props {
   URLSegment: string;
@@ -8,7 +7,7 @@ interface Props {
   totalPosts: number;
 }
 
-function isCategoriesDatum(data: any): data is BlogCategoriesDatum {
+function isCategories(data: any): data is BlogCategoriesDatum {
   return (data as BlogCategoriesDatum).attributes.publications !== undefined;
 }
 
@@ -32,7 +31,7 @@ export function CategoriesList({ URLSegment, dataList, totalPosts }: Props) {
               name={category.attributes.name}
               URLSegment={URLSegment}
               categoryCount={
-                isCategoriesDatum(category)
+                isCategories(category)
                   ? category.attributes.publications.data.length
                   : category.attributes.projects.data.length
               }
