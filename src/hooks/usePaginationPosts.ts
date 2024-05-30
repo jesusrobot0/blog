@@ -1,9 +1,10 @@
 import {
   usePathname,
   useSearchParams,
-  useRouter,
+  // useRouter,
   redirect,
 } from "next/navigation";
+import { useURL } from "./useURL";
 
 interface Props {
   pageCount: number;
@@ -12,27 +13,23 @@ interface Props {
 export function usePaginationPosts({ pageCount }: Props) {
   const currentPath = usePathname();
   const searchParams = useSearchParams();
-  const router = useRouter();
+  const { createUrl } = useURL();
 
   const params = new URLSearchParams(searchParams);
   const currentPage = Number(params.get("page")) || 1;
 
   if (currentPage > pageCount || currentPage < 1) redirect(currentPath);
 
-  const createPageUrl = (newPage: number) => {
-    params.set("page", String(newPage));
-    router.replace(`${currentPath}?${params.toString()}`, { scroll: false });
+  const handleLoadMore = async () => {
+    const newPage = String(currentPage + 1);
+    createUrl("page", newPage);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const handleLoadMore = async () => {
-    const newPage = currentPage + 1;
-    createPageUrl(newPage);
-  };
-
   const handleBack = async () => {
-    const newPage = currentPage - 1;
-    createPageUrl(newPage);
+    const newPage = String(currentPage - 1);
+    createUrl("page", newPage);
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return {

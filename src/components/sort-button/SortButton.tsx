@@ -1,17 +1,12 @@
 "use client";
 
-import { usePathname, useSearchParams, useRouter } from "next/navigation";
+import { useURL } from "@/hooks/useURL";
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 
 export function SortButton() {
   const [toggle, setToggle] = useState(false);
   const [sorting, setSorting] = useState("newest");
-
-  const currentPath = usePathname();
-  const searchParams = useSearchParams();
-  const router = useRouter();
-
-  const params = new URLSearchParams(searchParams);
+  const { createUrl } = useURL();
 
   const handleToggle = () => {
     setToggle(!toggle);
@@ -21,14 +16,9 @@ export function SortButton() {
     setSorting(e.target.value);
   };
 
-  const createPageUrl = (newPage: string) => {
-    params.set("sortBy", String(newPage));
-    router.replace(`${currentPath}?${params.toString()}`);
-  };
-
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    createPageUrl(sorting);
+    createUrl("sortBy", sorting);
     setToggle(!toggle);
   };
 
