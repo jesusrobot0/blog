@@ -1,9 +1,4 @@
-import {
-  usePathname,
-  useSearchParams,
-  // useRouter,
-  redirect,
-} from "next/navigation";
+import { usePathname, useSearchParams, redirect } from "next/navigation";
 import { useURL } from "./useURL";
 
 interface Props {
