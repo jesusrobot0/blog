@@ -15,17 +15,13 @@ export default async function BlogCategoryPage({
   params: { slug: category },
   searchParams: { page, sortBy },
 }: Props) {
-  const initialPage = Number(page) || 1;
-  const paginationTake = 2; // TODO: Restablecer a 7 (para producción)
-
+  const { data } = await getBlogCategory({ category });
   const { data: posts, meta } = await getBlogPosts({
-    page: initialPage,
-    take: paginationTake,
+    page: Number(page) || 1,
+    take: 2, // TODO: Restablecer a 7 (para producción)
     sort: sortBy,
     category,
   });
-
-  const { data } = await getBlogCategory({ category });
 
   const categoryDescription = data[0]?.attributes.description;
   const totalPosts = meta?.pagination.total;

@@ -1,9 +1,9 @@
 import { BlogPosts } from "@/interfaces";
 
 interface Args {
-  page: number;
-  take: number;
-  sort: string;
+  page?: number;
+  take?: number;
+  sort?: string;
   category: string;
 }
 
@@ -22,9 +22,9 @@ function getSortQueryParameter(sort: string) {
 }
 
 export async function getBlogPosts({
-  page,
-  take,
-  sort,
+  page = 1,
+  take = 7,
+  sort = "newest",
   category,
 }: Args): Promise<BlogPosts> {
   const base = "https://blog-api-dashboard-production.up.railway.app";
