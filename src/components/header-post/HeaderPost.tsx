@@ -57,7 +57,7 @@ export function HeaderPost({ post }: Props) {
         width={1216 / 2}
         height={1824 / 2}
         priority
-        className="w-full h-[1110px] object-cover"
+        className="w-full h-[780px] md:h-[1110px] object-cover"
       />
     </header>
   );
