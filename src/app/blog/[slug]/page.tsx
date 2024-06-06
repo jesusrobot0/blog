@@ -1,7 +1,18 @@
-export default function BlogPostPage() {
+import { getBlogPost } from "@/services";
+import { HeaderPost } from "@/components";
+
+interface Props {
+  params: {
+    slug: string;
+  };
+}
+
+export default async function BlogPostPage({ params: { slug } }: Props) {
+  const post = await getBlogPost({ slug });
+
   return (
     <div>
-      <h1>BlogPost Page</h1>
+      <HeaderPost post={post} />
     </div>
   );
 }

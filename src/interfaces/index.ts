@@ -8,3 +8,5 @@ export type { Post } from "./blog-posts";
 // Blog Category
 export type { CategoryData } from "./blog-category";
 export type { CategoryDatum } from "./blog-category";
+// BlogPost
+export type { BlogPostDatum } from "./blog-post";

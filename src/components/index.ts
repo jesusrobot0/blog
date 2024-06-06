@@ -19,3 +19,4 @@ export { LoadMoreButton } from "./load-more-button/LoadMoreButton";
 export { Loader } from "./loader/Loader";
 export { BackButton } from "./back-button/BackButton";
 export { SortButton } from "./sort-button/SortButton";
+export { HeaderPost } from "./header-post/HeaderPost";
