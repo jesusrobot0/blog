@@ -1,0 +1,15 @@
+@keyframes scrollScale {
+  0% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.scroll-scale-animation {
+  animation-timeline: scroll();
+  animation-name: scrollScale;
+  animation-duration: auto;
+  animation-timing-function: linear;
+}

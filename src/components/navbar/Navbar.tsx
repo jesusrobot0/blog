@@ -17,7 +17,7 @@ export function Navbar() {
   return (
     <div
       className={clsx(
-        "fixed w-screen bg-background transition-colors duration-200 ease-linear z-20",
+        "fixed w-screen bg-background transition-colors duration-200 ease-linear z-50",
         {
           "bg-white":
             isMenuOpen ||
