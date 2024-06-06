@@ -1,22 +1,25 @@
 import { Wrapper } from "../wrapper/Wrapper";
 import { BlogPostDatum } from "@/interfaces";
 import { getFormattedDate } from "@/utils";
+import Image from "next/image";
 
 interface Props {
   post: BlogPostDatum;
 }
 
 export function HeaderPost({ post }: Props) {
-  const { title, publishedAt, categories, author } = post.attributes;
+  const { title, realeaseDate, categories, author } = post.attributes;
+  const mainImageURL = post.attributes.mainImage.data.attributes.url;
+
   return (
     <header id="header" className="bg-background">
-      <Wrapper className="pt-[136px] pb-[108px] flex flex-col gap-[50px] text-white sm:py-[180px] sm:gap-[100px] md:pt-[158px] md:pb-[100px] md:gap-[66px]">
+      <Wrapper className="pt-[136px] pb-[108px] flex flex-col gap-[50px] text-white sm:py-[180px] sm:gap-[100px]  md:gap-[66px]">
         <div className="max-w-[990px] flex flex-col gap-6">
           <time
-            dateTime={getFormattedDate(publishedAt)}
+            dateTime={getFormattedDate(realeaseDate)}
             className="text-[18px] tracking-[0.36px] sm:text-[20px]"
           >
-            {getFormattedDate(publishedAt)}
+            {getFormattedDate(realeaseDate)}
           </time>
           <h1 className="text-[48px] tracking-[-0.48px] leading-[64px] sm:text-[80px] sm:tracking-[-1.6px] sm:leading-[100px]">
             {title}
@@ -48,6 +51,14 @@ export function HeaderPost({ post }: Props) {
           </div>
         </div>
       </Wrapper>
+      <Image
+        src={mainImageURL}
+        alt={`${title}`}
+        width={1216 / 2}
+        height={1824 / 2}
+        priority
+        className="w-full h-[1110px] object-cover"
+      />
     </header>
   );
 }

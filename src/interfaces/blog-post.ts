@@ -15,9 +15,11 @@ export interface PurpleAttributes {
   createdAt: Date;
   updatedAt: Date;
   publishedAt: Date;
+  realeaseDate: Date;
   cover: Cover;
   author: Author;
   categories: Categories;
+  mainImage: Cover;
 }
 
 export interface Author {
@@ -65,9 +67,9 @@ export interface TentacledAttributes {
   name: string;
   alternativeText: null;
   caption: null;
-  width: number;
-  height: number;
-  formats: Formats;
+  width: number | null;
+  height: number | null;
+  formats: Formats | null;
   hash: string;
   ext: string;
   mime: string;
