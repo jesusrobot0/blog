@@ -19,6 +19,8 @@ export function Logo({ currentSection, isMenuOpen, setIsMenuOpen }: Props) {
             currentSection === "post-list" ||
             currentSection === "category-header" ||
             isMenuOpen,
+          "text-white":
+            currentSection === "relatedPosts" && isMenuOpen === false,
         }
       )}
       onClick={() => setIsMenuOpen(false)}

@@ -92,7 +92,11 @@ export function UserLinks({
                   currentSection === "post-list" ||
                   currentSection === "category-header",
               },
-              { "bg-textColor": isMenuOpen }
+              { "bg-textColor": isMenuOpen },
+              {
+                "bg-white":
+                  currentSection === "relatedPosts" && isMenuOpen === false,
+              }
             )}
           ></span>
           <span
@@ -106,7 +110,11 @@ export function UserLinks({
                   currentSection === "post-list" ||
                   currentSection === "category-header",
               },
-              { "bg-textColor": isMenuOpen }
+              { "bg-textColor": isMenuOpen },
+              {
+                "bg-white":
+                  currentSection === "relatedPosts" && isMenuOpen === false,
+              }
             )}
           ></span>
         </div>

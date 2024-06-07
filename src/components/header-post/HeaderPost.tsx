@@ -1,7 +1,7 @@
-import { Wrapper } from "../wrapper/Wrapper";
-import { BlogPostDatum } from "@/interfaces";
-import { getFormattedDate } from "@/utils";
 import Image from "next/image";
+import { Wrapper } from "../wrapper/Wrapper";
+import { getFormattedDate } from "@/utils";
+import { BlogPostDatum } from "@/interfaces";
 import styles from "./headerPost.module.css";
 
 interface Props {
@@ -13,8 +13,8 @@ export function HeaderPost({ post }: Props) {
   const mainImageURL = post.attributes.mainImage.data.attributes.url;
 
   return (
-    <>
-      <header id="header" className="bg-background z-20 relative ">
+    <header id="header">
+      <div className="bg-background z-20 relative">
         <Wrapper className="pt-[136px] pb-[108px] flex flex-col gap-[50px] text-white sm:pt-[180px] sm:pb-[100px] sm:gap-[100px] md:gap-[66px]">
           <div className="max-w-[990px] flex flex-col gap-6">
             <time
@@ -53,17 +53,17 @@ export function HeaderPost({ post }: Props) {
             </div>
           </div>
         </Wrapper>
-      </header>
+      </div>
       <div className="overflow-clip">
         <Image
           src={mainImageURL}
-          alt={`${title}`}
+          alt={title}
           width={1216 / 2}
           height={1824 / 2}
           priority
           className={`w-full h-[619px] md:h-[860px] object-cover ${styles["scroll-scale-animation"]} z-10`}
         />
       </div>
-    </>
+    </header>
   );
 }

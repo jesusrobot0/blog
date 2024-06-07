@@ -31,7 +31,13 @@ export function useNavigationSectionTracker({ navHeight, reset }: Props) {
 
     observerRef.current = observer; // *
 
-    const sections = ["header", "post-list", "footer", "category-header"];
+    const sections = [
+      "header",
+      "post-list",
+      "footer",
+      "category-header",
+      "relatedPosts",
+    ];
     sections.forEach((id) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);

@@ -26,10 +26,16 @@ export function Navbar() {
           "bg-background":
             !isMenuOpen &&
             (currentSection === "header" || currentSection === "footer"),
+          "bg-black": currentSection === "relatedPosts",
         }
       )}
     >
-      <nav className="w-[90%] max-w-[1440px] h-[74px] mx-auto flex justify-between items-center text-textAccent border-b border-b-[#8f7b71]">
+      <nav
+        className={clsx(
+          "w-[90%] max-w-[1440px] h-[74px] mx-auto flex justify-between items-center text-textAccent border-b",
+          { "border-b-[#8f7b71]": currentSection !== "relatedPosts" }
+        )}
+      >
         <Logo
           currentSection={currentSection}
           isMenuOpen={isMenuOpen}
