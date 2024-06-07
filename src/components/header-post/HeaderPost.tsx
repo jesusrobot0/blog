@@ -54,14 +54,16 @@ export function HeaderPost({ post }: Props) {
           </div>
         </Wrapper>
       </header>
-      <Image
-        src={mainImageURL}
-        alt={`${title}`}
-        width={1216 / 2}
-        height={1824 / 2}
-        priority
-        className={`w-full h-[619px] md:h-[860px] object-cover ${styles["scroll-scale-animation"]} z-10`}
-      />
+      <div className="overflow-clip">
+        <Image
+          src={mainImageURL}
+          alt={`${title}`}
+          width={1216 / 2}
+          height={1824 / 2}
+          priority
+          className={`w-full h-[619px] md:h-[860px] object-cover ${styles["scroll-scale-animation"]} z-10`}
+        />
+      </div>
     </>
   );
 }
