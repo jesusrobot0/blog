@@ -1,8 +1,10 @@
+import { BlogPostDatum } from "@/interfaces";
+
 interface Args {
   slug: string;
 }
 
-export async function getBlogPost({ slug }: Args) {
+export async function getBlogPost({ slug }: Args): Promise<BlogPostDatum> {
   const base = "https://blog-api-dashboard-production.up.railway.app";
   const filter = `filters[slug][$eq]=${slug}`;
   const endpoint = `${base}/api/publications?${filter}&populate=*`;
