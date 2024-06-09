@@ -45,7 +45,7 @@ export function CompactPostCard({ relatedPost }: Props) {
             </div>
           </div>
         </header>
-        <footer className="relative bottom-0 flex gap-[20px] sm:flex-row z-10  max-[400px]:flex-col">
+        <footer className="relative bottom-0 flex gap-[20px] sm:flex-row z-10 max-[400px]:flex-col">
           <ul className="flex flex-col gap-[20px] sm:flex-row">
             {relatedPost.attributes.categories.data.map((category) => (
               <li key={category.attributes.name}>
