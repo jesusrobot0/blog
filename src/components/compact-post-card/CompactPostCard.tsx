@@ -7,7 +7,6 @@ interface Props {
   relatedPost: BlogPostDatum;
 }
 export function CompactPostCard({ relatedPost }: Props) {
-  console.log(relatedPost.attributes.title);
   return (
     <article className="relative py-[50px] flex flex-col gap-8 border-t border-t-[#898989] group min-[1200px]:w-1/2">
       <aside>
