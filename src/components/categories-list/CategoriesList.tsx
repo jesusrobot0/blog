@@ -20,7 +20,16 @@ export function CategoriesList({ URLSegment, dataList, totalPosts }: Props) {
         />
 
         {dataList.map((category) => {
+          // Evita renderizar la categoría "All Blogs" ya que esta se renderiza
+          // de forma estática más arriba
           if (category.attributes.name === "All Blogs") return;
+
+          // Evita renderizar categorías sin publicaciones asignadas
+          // Este código solo se aplica a blog categories
+          if (isCategories(category)) {
+            if (category.attributes.publications.data.length === 0) return;
+          }
+
           return (
             <CategoryListItem
               key={`hero-categoriesList-item-${category.id}`}
