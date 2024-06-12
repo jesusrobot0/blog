@@ -10,16 +10,16 @@ export interface BlogPostDatum {
 
 export interface PurpleAttributes {
   title: string;
-  content: Content[];
   slug: string;
   createdAt: Date;
   updatedAt: Date;
   publishedAt: Date;
   realeaseDate: Date;
+  content: Content[];
   cover: Cover;
   author: Author;
   categories: Categories;
-  mainImage: Cover;
+  mainImage: MainImage;
 }
 
 export interface Author {
@@ -46,52 +46,59 @@ export interface Categories {
 
 export interface Content {
   type: string;
-  children: Child[];
+  level?: number;
+  children: ContentChild[];
+  image?: Image;
+  format?: string;
 }
 
-export interface Child {
+export interface ContentChild {
+  text?: string;
+  type: Type;
+  children?: ChildChild[];
+}
+
+export interface ChildChild {
   text: string;
-  type: string;
+  type: Type;
 }
 
-export interface Cover {
-  data: Data;
+export enum Type {
+  ListItem = "list-item",
+  Text = "text",
 }
 
-export interface Data {
-  id: number;
-  attributes: TentacledAttributes;
-}
-
-export interface TentacledAttributes {
+export interface Image {
+  ext: string;
+  url: string;
+  hash: string;
+  mime: string;
   name: string;
-  alternativeText: null;
-  caption: null;
+  size: number;
   width: number | null;
   height: number | null;
-  formats: Formats | null;
-  hash: string;
-  ext: string;
-  mime: string;
-  size: number;
-  url: string;
-  previewUrl: null;
+  caption: null;
+  formats: ImageFormats | null;
   provider: string;
-  provider_metadata: ProviderMetadata;
   createdAt: Date;
   updatedAt: Date;
+  previewUrl: null;
+  alternativeText: null | string;
+  provider_metadata: ProviderMetadata;
 }
 
-export interface Formats {
+export interface ImageFormats {
+  large: Small;
   small: Small;
+  medium: Small;
   thumbnail: Small;
 }
 
 export interface Small {
-  ext: string;
+  ext: EXT;
   url: string;
   hash: string;
-  mime: string;
+  mime: MIME;
   name: string;
   path: null;
   size: number;
@@ -101,9 +108,63 @@ export interface Small {
   provider_metadata: ProviderMetadata;
 }
 
+export enum EXT {
+  Jpg = ".jpg",
+}
+
+export enum MIME {
+  ImageJPEG = "image/jpeg",
+}
+
 export interface ProviderMetadata {
   public_id: string;
-  resource_type: string;
+  resource_type: ResourceType;
+}
+
+export enum ResourceType {
+  Image = "image",
+}
+
+export interface Cover {
+  data: CoverData;
+}
+
+export interface CoverData {
+  id: number;
+  attributes: TentacledAttributes;
+}
+
+export interface TentacledAttributes {
+  name: string;
+  alternativeText: null;
+  caption: null;
+  width: number;
+  height: number;
+  formats: PurpleFormats;
+  hash: string;
+  ext: EXT;
+  mime: MIME;
+  size: number;
+  url: string;
+  previewUrl: null;
+  provider: string;
+  provider_metadata: ProviderMetadata;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface PurpleFormats {
+  small: Small;
+  thumbnail: Small;
+}
+
+export interface MainImage {
+  data: MainImageData;
+}
+
+export interface MainImageData {
+  id: number;
+  attributes: Image;
 }
 
 export interface Meta {
