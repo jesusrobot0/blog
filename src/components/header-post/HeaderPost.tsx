@@ -13,7 +13,7 @@ export function HeaderPost({ post }: Props) {
   const mainImageURL = post.attributes.mainImage.data.attributes.url;
 
   return (
-    <header id="header" data-bg-nav="primary">
+    <header data-bg-nav="primary">
       <div className="bg-background z-20 relative">
         <Wrapper className="pt-[136px] pb-[108px] flex flex-col gap-[50px] text-white sm:pt-[180px] sm:pb-[100px] sm:gap-[100px] md:gap-[66px]">
           <div className="max-w-[990px] flex flex-col gap-6">

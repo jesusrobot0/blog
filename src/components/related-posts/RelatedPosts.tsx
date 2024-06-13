@@ -9,7 +9,6 @@ export function RelatedPosts({ relatedPosts }: Props) {
   return (
     <aside
       className="pt-[120px] pb-[100px] text-white bg-black sm:pt-[150px]"
-      id="relatedPosts"
       data-bg-nav="black"
     >
       <Wrapper className="flex flex-col gap-[60px] sm:gap-[50px]">

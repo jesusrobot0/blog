@@ -5,7 +5,6 @@ export function Footer() {
   return (
     <footer
       className="py-[70px]  text-white bg-background min-[1200px]:py-[100px]"
-      id="footer"
       data-bg-nav="primary"
     >
       <Wrapper>

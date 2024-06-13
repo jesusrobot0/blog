@@ -17,7 +17,6 @@ export function HeroWithCategoryList({
   return (
     <header
       className="pt-[120px] pb-[80px] bg-background min-[1200px]:pt-[200px] min-[1200px]:pb-[100px]"
-      id="header"
       data-bg-nav="primary"
     >
       <Wrapper>

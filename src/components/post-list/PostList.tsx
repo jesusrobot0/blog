@@ -7,11 +7,7 @@ interface Props {
 
 export function PostList({ dataPosts }: Props) {
   return (
-    <main
-      className="mb-[70px]"
-      // id="post-list"
-      data-bg-nav="white"
-    >
+    <main className="mb-[70px]" data-bg-nav="white">
       <div className="flex flex-col gap-[60px] [&>*:last-child]:border-b-0">
         {dataPosts.map((post, index) => {
           if (index === 0) {
