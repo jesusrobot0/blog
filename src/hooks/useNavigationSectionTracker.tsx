@@ -18,7 +18,11 @@ export function useNavigationSectionTracker({ navHeight, reset }: Props) {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            setCurrentSection(entry.target.id);
+            const element = entry.target as HTMLElement;
+            const section = element.dataset.bgNav;
+            if (section !== undefined) {
+              setCurrentSection(section);
+            }
           }
         });
       },
@@ -31,18 +35,29 @@ export function useNavigationSectionTracker({ navHeight, reset }: Props) {
 
     observerRef.current = observer; // *
 
-    const sections = [
-      "header",
-      "post-list",
-      "footer",
-      "category-header",
-      "relatedPosts",
-    ];
-    sections.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
+    const sections = ["white", "primary", "black"];
+
+    sections.forEach((section) => {
+      const elements = document.querySelectorAll(`[data-bg-nav="${section}"]`);
+      const arrayElements = Array.from(elements);
+      arrayElements.map((element) => {
+        observer.observe(element);
+      });
     });
 
+    // const sections = [
+    //   "header",
+    //   "post-list",
+    //   "footer",
+    //   "category-header",
+    //   "relatedPosts",
+    // ];
+    // sections.forEach((id) => {
+    //   const el = document.getElementById(id);
+    //   if (el) observer.observe(el);
+    // });
+
+    // Clean Up del efecto
     return () => {
       sections.forEach((id) => {
         const el = document.getElementById(id);
@@ -50,7 +65,7 @@ export function useNavigationSectionTracker({ navHeight, reset }: Props) {
       });
       observer.disconnect();
     };
-  }, [reset]); // * Se vuelve a ejecutar cuando se cambia de página
+  }, [reset]); // * Se vuelve a ejecutar cada vez que se cambia de página
 
   return currentSection;
 }

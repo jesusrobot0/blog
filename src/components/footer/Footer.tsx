@@ -6,6 +6,7 @@ export function Footer() {
     <footer
       className="py-[70px]  text-white bg-background min-[1200px]:py-[100px]"
       id="footer"
+      data-bg-nav="primary"
     >
       <Wrapper>
         <div className="flex flex-col gap-[60px] min-[1200px]:gap-[76px]">

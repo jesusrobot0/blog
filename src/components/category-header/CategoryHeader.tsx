@@ -17,6 +17,7 @@ export function CategoryHeader({
     <header
       className="flex flex-col gap-10 mb-10 bg-white"
       id="category-header"
+      data-bg-nav="white"
     >
       <div className="flex flex-col gap-y-6 md:flex-row ">
         <div className="flex flex-col gap-y-1 md:w-1/2">

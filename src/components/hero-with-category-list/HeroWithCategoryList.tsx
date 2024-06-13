@@ -18,6 +18,7 @@ export function HeroWithCategoryList({
     <header
       className="pt-[120px] pb-[80px] bg-background min-[1200px]:pt-[200px] min-[1200px]:pb-[100px]"
       id="header"
+      data-bg-nav="primary"
     >
       <Wrapper>
         <div className="flex flex-col gap-7 text-white animate-fadeIn min-[1200px]:flex-row min-[1200px]:justify-between min-[1200px]:gap-0">

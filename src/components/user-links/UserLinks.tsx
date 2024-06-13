@@ -28,9 +28,7 @@ export function UserLinks({
           "absolute top-[74px] left-0 w-screen h-screen pt-[75px] flex flex-col items-center sm:gap-10 sm:static sm:w-auto sm:h-auto sm:pt-0 sm:flex sm:flex-row",
           { hidden: !isMenuOpen },
           {
-            "text-textColor":
-              currentSection === "post-list" ||
-              currentSection === "category-header",
+            "text-textColor": currentSection === "white",
           },
           { "bg-white text-textColor": isMenuOpen }
         )}
@@ -88,14 +86,11 @@ export function UserLinks({
                 "translate-y-1 rotate-45": isMenuOpen,
               },
               {
-                "bg-textColor":
-                  currentSection === "post-list" ||
-                  currentSection === "category-header",
+                "bg-textColor": currentSection === "white",
               },
               { "bg-textColor": isMenuOpen },
               {
-                "bg-white":
-                  currentSection === "relatedPosts" && isMenuOpen === false,
+                "bg-white": currentSection === "black" && isMenuOpen === false,
               }
             )}
           ></span>
@@ -106,14 +101,11 @@ export function UserLinks({
                 "w-[20.5px] -translate-y-1.5 -rotate-45": isMenuOpen,
               },
               {
-                "bg-textColor":
-                  currentSection === "post-list" ||
-                  currentSection === "category-header",
+                "bg-textColor": currentSection === "white",
               },
               { "bg-textColor": isMenuOpen },
               {
-                "bg-white":
-                  currentSection === "relatedPosts" && isMenuOpen === false,
+                "bg-white": currentSection === "black" && isMenuOpen === false,
               }
             )}
           ></span>

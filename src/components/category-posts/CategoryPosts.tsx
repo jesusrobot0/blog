@@ -1,8 +1,8 @@
 import { PaginationButtons, PostList } from "@/components";
-import { Post } from "@/interfaces";
+import { BlogPostDatum } from "@/interfaces";
 
 interface Props {
-  posts: Post[];
+  posts: BlogPostDatum[];
   pageCount: number;
   category: string;
 }

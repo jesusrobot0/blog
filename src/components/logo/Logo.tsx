@@ -16,11 +16,8 @@ export function Logo({ currentSection, isMenuOpen, setIsMenuOpen }: Props) {
         `${LogoFont.className} text-[22px] font-bold tracking-tight hover:text-[#a89e9a]`,
         {
           "text-textColor hover:text-textColor":
-            currentSection === "post-list" ||
-            currentSection === "category-header" ||
-            isMenuOpen,
-          "text-white":
-            currentSection === "relatedPosts" && isMenuOpen === false,
+            currentSection === "white" || isMenuOpen,
+          "text-white": currentSection === "black" && isMenuOpen === false,
         }
       )}
       onClick={() => setIsMenuOpen(false)}
