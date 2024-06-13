@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getFormattedDate } from "@/utils";
-import { Post } from "@/interfaces";
+import { BlogPostDatum } from "@/interfaces";
 
 interface Props {
-  post: Post;
+  post: BlogPostDatum;
   priority?: boolean;
 }
 
