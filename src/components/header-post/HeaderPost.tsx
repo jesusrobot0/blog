@@ -29,7 +29,7 @@ export function HeaderPost({ post }: Props) {
           </div>
           <div className="flex flex-col gap-[38px] sm:flex-row sm:gap-[110px]">
             <div className="w-fit flex flex-col gap-2">
-              <p className="text-[18px] text-[#ac9b94] sm:text-[20px]">
+              <p className="text-[18px] text-[#c9b8b1] sm:text-[20px]">
                 Written by
               </p>
               <p className="text-[20px] text-white leading-[30px] sm:text-[28px]">
@@ -37,7 +37,7 @@ export function HeaderPost({ post }: Props) {
               </p>
             </div>
             <div className="w-fit flex flex-col gap-2">
-              <p className="text-[18px] text-[#ac9b94] sm:text-[20px]">
+              <p className="text-[18px] text-[#c9b8b1] sm:text-[20px]">
                 Category
               </p>
               <div className="flex flex-col gap-2">
