@@ -4,6 +4,8 @@ interface Props {
 }
 
 export function Heading({ text = "", level }: Props) {
+  if (text === undefined) return;
+
   const Tag = `h${level}` as keyof JSX.IntrinsicElements;
 
   return (

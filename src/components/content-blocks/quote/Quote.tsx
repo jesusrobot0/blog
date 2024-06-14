@@ -1,7 +1,9 @@
 interface Props {
   text: string | undefined;
 }
-export function Quote({ text }: Props) {
+export function Quote({ text = "" }: Props) {
+  if (text === undefined) return;
+
   return (
     <blockquote className="flex flex-col gap-[20px] sm:flex-row sm:items-start sm:gap-0">
       <img src="/icons/quote.svg" alt="Quote icon" className="w-[80px]" />
