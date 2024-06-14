@@ -1,5 +1,5 @@
 import { Content } from "@/interfaces/blog-posts";
-import { Heading, Paragraph, Picture, Quote } from "../content-blocks";
+import { Heading, List, Paragraph, Picture, Quote } from "../content-blocks";
 import { Wrapper } from "../wrapper/Wrapper";
 
 interface Props {
@@ -53,6 +53,7 @@ export function ContentPost({ content }: Props) {
           <div className="w-full flex flex-col gap-[24px] lg:w-1/2 lg:max-w-[657px]">
             <Paragraph text={content[12]?.children[0].text} />
             <Paragraph text={content[13]?.children[0].text} />
+            <List listItems={content[14]?.children} format="unordered" />
           </div>
         </div>
 
