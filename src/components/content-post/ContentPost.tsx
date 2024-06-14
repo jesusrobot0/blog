@@ -7,17 +7,16 @@ interface Props {
 }
 
 export function ContentPost({ content }: Props) {
-  console.log(content[20]);
   return (
     <main data-bg-nav="white">
       <Wrapper className="py-[80px] flex flex-col gap-[80px] lg:py-[120px]">
         <div className="flex justify-between flex-col gap-[80px] lg:flex-row">
           <div className="w-full lg:w-1/2 lg:max-w-[657px]">
-            <Heading level={1} text={content[0].children[0].text} />
+            <Heading level={1} text={content[0]?.children[0].text} />
           </div>
           <div className="w-full flex flex-col gap-[24px] lg:w-1/2 lg:max-w-[657px]">
-            <Paragraph text={content[1].children[0].text} />
-            <Paragraph text={content[2].children[0].text} />
+            <Paragraph text={content[1]?.children[0].text} />
+            <Paragraph text={content[2]?.children[0].text} />
           </div>
         </div>
 
@@ -30,15 +29,15 @@ export function ContentPost({ content }: Props) {
 
         <div className="flex justify-between flex-col gap-[80px] lg:flex-row">
           <div className="w-full lg:w-1/2 lg:max-w-[657px]">
-            <Heading level={1} text={content[5].children[0].text} />
+            <Heading level={1} text={content[5]?.children[0].text} />
           </div>
           <div className="w-full flex flex-col gap-[24px] lg:w-1/2 lg:max-w-[657px]">
-            <Paragraph text={content[6].children[0].text} />
-            <Paragraph text={content[7].children[0].text} />
+            <Paragraph text={content[6]?.children[0].text} />
+            <Paragraph text={content[7]?.children[0].text} />
           </div>
         </div>
 
-        <Quote text={content[8].children[0].text} />
+        <Quote text={content[8]?.children[0].text} />
 
         <Picture
           src={content[9].image?.url}
@@ -49,15 +48,15 @@ export function ContentPost({ content }: Props) {
 
         <div className="flex justify-between flex-col gap-[80px] lg:flex-row">
           <div className="w-full lg:w-1/2 lg:max-w-[657px]">
-            <Heading level={1} text={content[11].children[0].text} />
+            <Heading level={1} text={content[11]?.children[0].text} />
           </div>
           <div className="w-full flex flex-col gap-[24px] lg:w-1/2 lg:max-w-[657px]">
-            <Paragraph text={content[12].children[0].text} />
-            <Paragraph text={content[13].children[0].text} />
+            <Paragraph text={content[12]?.children[0].text} />
+            <Paragraph text={content[13]?.children[0].text} />
           </div>
         </div>
 
-        <Quote text={content[15].children[0].text} />
+        <Quote text={content[15]?.children[0].text} />
 
         <div className="flex flex-col gap-[50px]">
           <div className="flex flex-col gap-[35px] lg:gap-[80px] lg:flex-row">
