@@ -60,7 +60,6 @@ export function HeaderPost({ post }: Props) {
           alt={title}
           width={1216 / 3}
           height={1824 / 3}
-          quality={73}
           priority
           className={`w-full h-[619px] md:h-[860px] object-cover ${styles["scroll-scale-animation"]} z-10`}
         />
