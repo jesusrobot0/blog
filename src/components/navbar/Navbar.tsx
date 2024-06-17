@@ -28,7 +28,8 @@ export function Navbar() {
       <nav
         className={clsx(
           "w-[90%] max-w-[1440px] h-[74px] mx-auto flex justify-between items-center text-textAccent border-b",
-          { "border-b-[#8f7b71]": currentSection !== "black" }
+          { "border-b-[#8f7b71]": currentSection === "primary" },
+          { "border-b-textColor": currentSection === "white" }
         )}
       >
         <Logo

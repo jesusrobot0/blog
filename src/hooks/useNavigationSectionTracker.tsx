@@ -45,18 +45,6 @@ export function useNavigationSectionTracker({ navHeight, reset }: Props) {
       });
     });
 
-    // const sections = [
-    //   "header",
-    //   "post-list",
-    //   "footer",
-    //   "category-header",
-    //   "relatedPosts",
-    // ];
-    // sections.forEach((id) => {
-    //   const el = document.getElementById(id);
-    //   if (el) observer.observe(el);
-    // });
-
     // Clean Up del efecto
     return () => {
       sections.forEach((id) => {
