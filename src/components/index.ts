@@ -23,3 +23,4 @@ export { HeaderPost } from "./header-post/HeaderPost";
 export { RelatedPosts } from "./related-posts/RelatedPosts";
 export { CompactPostCard } from "./compact-post-card/CompactPostCard";
 export { ContentPost } from "./content-post/ContentPost";
+export { DynamicContentPost } from "./dynamic-content-post/DynamicContentPost";

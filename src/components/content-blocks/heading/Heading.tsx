@@ -1,6 +1,6 @@
 interface Props {
   text: string | undefined;
-  level: 1 | 2 | 3 | 4 | 5 | 6;
+  level: number | undefined;
 }
 
 export function Heading({ text = "", level }: Props) {

@@ -1,5 +1,10 @@
 import { getBlogPost, getBlogPosts } from "@/services";
-import { ContentPost, HeaderPost, RelatedPosts } from "@/components";
+import {
+  ContentPost,
+  DynamicContentPost,
+  HeaderPost,
+  RelatedPosts,
+} from "@/components";
 
 interface Props {
   params: {
@@ -18,7 +23,8 @@ export default async function BlogPostPage({ params: { slug } }: Props) {
   return (
     <div>
       <HeaderPost post={post} />
-      <ContentPost content={post.attributes.content} />
+      <DynamicContentPost content={post.attributes.content} />
+      {/* <ContentPost content={post.attributes.content} /> */}
       <RelatedPosts relatedPosts={relatedPosts} />
     </div>
   );
