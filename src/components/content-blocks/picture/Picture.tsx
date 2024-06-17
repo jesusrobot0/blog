@@ -23,6 +23,7 @@ export function Picture({
         alt={alt}
         width={width}
         height={height}
+        quality={74}
         className={`w-full h-[335px] object-cover object-center sm:h-[760px] ${classNameImage}`}
       />
       <figcaption className="text-[#717171] tracking-[0.36px] leading-[22px] sm:text-[20px] sm:leading-[30px]">
