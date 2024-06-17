@@ -58,8 +58,9 @@ export function HeaderPost({ post }: Props) {
         <Image
           src={mainImageURL}
           alt={title}
-          width={1216 / 2}
-          height={1824 / 2}
+          width={1216 / 3}
+          height={1824 / 3}
+          quality={70}
           priority
           className={`w-full h-[619px] md:h-[860px] object-cover ${styles["scroll-scale-animation"]} z-10`}
         />

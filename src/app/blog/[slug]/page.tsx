@@ -24,7 +24,6 @@ export default async function BlogPostPage({ params: { slug } }: Props) {
     <div>
       <HeaderPost post={post} />
       <DynamicContentPost content={post.attributes.content} />
-      {/* <ContentPost content={post.attributes.content} /> */}
       <RelatedPosts relatedPosts={relatedPosts} />
     </div>
   );
