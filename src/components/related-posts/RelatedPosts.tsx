@@ -17,7 +17,7 @@ export function RelatedPosts({ relatedPosts }: Props) {
             Related Posts
           </h2>
           <div className="hidden md:block">
-            <FancyLink href="" text="View All Posts" dark />
+            <FancyLink href="/blog/category/all" text="View All Posts" dark />
           </div>
         </header>
         <div className="flex flex-col min-[1200px]:gap-[80px]  min-[1200px]:flex-row">
@@ -29,7 +29,7 @@ export function RelatedPosts({ relatedPosts }: Props) {
           ))}
         </div>
         <div className="md:hidden">
-          <FancyLink href="" text="View All Posts" dark />
+          <FancyLink href="/blog/category/all" text="View All Posts" dark />
         </div>
       </Wrapper>
     </aside>
