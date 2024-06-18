@@ -12,6 +12,14 @@ interface Props {
   };
 }
 
+export async function generateStaticParams() {
+  const blogs = await getBlogPosts({ category: "all" });
+  const slugs = blogs.data.map((blog) => ({
+    slug: blog.attributes.slug,
+  }));
+  return slugs;
+}
+
 export default async function BlogPostPage({ params: { slug } }: Props) {
   const post = await getBlogPost({ slug });
   const { data: relatedPosts } = await getBlogPosts({
